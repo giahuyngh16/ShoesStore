@@ -1,0 +1,49 @@
+#footer {
+  background-color: #111;
+  color: #fff;
+}
+
+#footer a {
+  color: #fff;
+}
+
+p {
+  color: #fff;
+}
+
+#footer a:hover,
+#footer li {
+  color: #ff914d;
+  padding: 6px 0;
+}
+
+#footer .bold {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.hotline {
+  font-weight: bold;
+}
+
+.social-media img {
+  width: 35px;
+  padding: 6px;
+  margin-right: 12px;
+  background-color: #fff;
+  border-radius: 10px;
+}
+
+.social-media img:hover {
+  cursor: pointer;
+  opacity: 0.7;
+}
+
+#footer .container > p {
+  margin: 0;
+}
+
+li {
+  width: 100% !important;
+}
+/*# sourceMappingURL=footer.component.css.map */

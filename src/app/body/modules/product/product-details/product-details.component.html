@@ -1,0 +1,49 @@
+<div class="container">
+  <div class="py-3">
+    <div class="path d-flex mt-3">
+      <a [routerLink]="['/all-products']">Products</a>
+      <span>/</span>
+      <a [routerLink]="['/all-products']">{{brandInfor?.name}}</a>
+      <span>/</span>
+      <a class="active" [routerLink]="['/all-products']">Details</a>
+    </div>
+    <div class="product-detail mt-4 px-5">
+      <div class="d-flex justify-content-between px-5">
+        <div class="col-lg-6 px-5">
+          <img src="/assets/image/product/nike1.jfif" alt="" />
+          <div class="items d-flex pt-3">
+            <img src="/assets/image/product/nike1.jfif" alt="" />
+            <img src="/assets/image/product/nike1.jfif" alt="" />
+            <img src="/assets/image/product/nike1.jfif" alt="" />
+          </div>
+        </div>
+        <div class="detail-content col-lg-6 ps-5">
+          <div class="">
+            <h1>{{productDetail?.name}}</h1>
+            <p>{{productDetail?.priceVND}}</p>
+            <p>
+              {{productDetail?.description}}
+            </p>
+            <h3>Size:</h3>
+            <div class="box-size d-flex flex-wrap justify-content-start">
+              <div *ngFor="let size of sizeProductInfors" class="col-lg-3 mb-3">
+                <div class="box-size-item">
+                  <input  type="submit" value={{size.productSize}}>
+                </div>
+              </div>
+            </div>
+            <br />
+            <div class="d-flex">
+              <h3>Quantity:</h3>
+              <input min="0" type="number" name="1" id="" value="1" />
+            </div>
+            <button class="mt-5 py-3 px-5 btn btn-black">ADD TO CART</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="my-5">
+    <app-index-special-product></app-index-special-product>
+  </div>
+</div>

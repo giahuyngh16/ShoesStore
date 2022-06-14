@@ -1,0 +1,44 @@
+.mobile-header {
+  position: fixed;
+  width: 100%;
+  background-color: #fff;
+  z-index: 5;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+}
+
+img {
+  height: 35px;
+}
+
+img:hover {
+  cursor: pointer;
+  opacity: 0.7;
+}
+
+.mobile-header-item {
+  max-width: 480px;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-color: #fff;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+}
+
+hr {
+  border: 1px solid #000;
+  border-radius: 10px;
+}
+
+a {
+  color: #707070;
+  padding: 10px 0;
+}
+
+.main-text-color {
+  color: #ff914d;
+}
+
+ul {
+  padding: 0;
+}

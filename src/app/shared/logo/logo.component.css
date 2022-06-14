@@ -1,0 +1,9 @@
+img {
+  height: 40px;
+}
+
+img :hover {
+  cursor: pointer;
+  opacity: 0.7;
+}
+/*# sourceMappingURL=logo.component.css.map */

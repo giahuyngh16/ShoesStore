@@ -1,0 +1,49 @@
+img {width: 100%; border-radius: 10px;}
+
+li {line-height: 30px; height: 45px;}
+
+.type-email {background: #eee;}
+
+.type-email input{
+  background: #fff;
+  width: 100%;
+  height: 50px;
+  border-radius: 5px;
+  padding: 0 10px;
+  outline: none;
+  border: none;
+}
+
+h5 {
+  font-size: 20px;
+}
+
+a {
+  color: #ff914d;
+  font-size: 110%;
+  &:hover {cursor: pointer; font-weight: bold;}
+}
+
+.type-email button {
+  width: 100%;
+  height: 50px;
+  background-color: #111;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 12px 30px;
+  transition: transform .2s;
+  &:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+  }
+}
+
+
+@media (max-width: 1023px) {
+  .py-7 {padding: 40px 0;}
+}
+
+@media (max-width: 480px) {
+  .py-7 {padding: 10px 0}
+}

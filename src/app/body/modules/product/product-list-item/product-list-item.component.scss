@@ -1,0 +1,31 @@
+.paging a {
+  width: 40px;
+  height: 40px;
+  margin-left: 10px;
+  border: 1px solid #111;
+  text-align: center;
+  line-height: 40px;
+  color: #111;
+}
+
+.active {
+  background-color: #111 !important;
+  color: #fff !important;
+}
+
+.paging a:first-child,
+.paging a:last-child {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+}
+
+img {
+  width: 20px;
+}
+
+
+.list-product {
+  width: 100% !important;
+}

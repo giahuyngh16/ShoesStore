@@ -1,0 +1,77 @@
+.ms-5 > a {
+  color: #707070;
+  line-height: 70px;
+}
+
+a {
+  color: #707070;
+}
+
+a:hover,
+span {
+  cursor: pointer;
+  color: #ff914d !important;
+}
+
+div:last-child a {
+  position: relative;
+}
+
+span {
+  position: absolute;
+  top: -30px;
+  right: -5px;
+}
+
+.header-navbar {
+  color: #707070;
+}
+
+img {
+  height: 30px;
+}
+
+.dropdown-product {
+  position: relative;
+}
+
+.dropdown-product-items,
+.dropdown-service-items {
+  width: 160px;
+  display: none;
+  position: absolute;
+  top: 70px;
+  background-color: #fff;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.15) 0px 3px 3px 0px;
+          box-shadow: rgba(0, 0, 0, 0.15) 0px 3px 3px 0px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding-bottom: 15px;
+}
+
+.dropdown-product-items a,
+.dropdown-service-items a {
+  padding: 5px 20px;
+}
+
+.dropdown:hover .dropdown-product-items {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.dropdown:hover .dropdown-service-items {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+input {
+  outline: none;
+  border: 1px solid #999;
+  padding: 5px 40px 5px 15px;
+  border-radius: 10px;
+}
+/*# sourceMappingURL=header-navbar.component.css.map */
