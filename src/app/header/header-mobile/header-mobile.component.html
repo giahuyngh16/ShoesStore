@@ -1,0 +1,30 @@
+<div class="mobile-header">
+  <div class="mobile-header-btn d-flex justify-content-between align-items-center h-full px-3 py-2">
+    <img src="../../assets/image/icon/menu.png" alt="" (click)="showMobileMenu()">
+    <app-logo></app-logo>
+    <a [routerLink]="['/cart']" routerLinkActive="nav-selected">
+      <img src="../../assets/image/icon/shopping-bag.png" alt="">
+      <span class="main-text-color">0</span>
+    </a>
+  </div>
+  <div class="mobile-header-item">
+    <div class="px-3 py-2 pb-4" *ngIf="mMenu">
+      <img class="p-1 mt-2" src="../../assets/image/icon/reject.png" alt="" (click)="showMobileMenu()">
+      <div class="d-flex flex-column p-1">
+        <a [routerLink]="['/home']" routerLinkActive="nav-selected">Home</a>
+        <a class="dropdown-toggle" [routerLink]="['/all-products']" routerLinkActive="nav-selected" (click)="onShowItem()">Products</a>
+        <ul class="d-flex flex-column" *ngIf="product">
+          <app-list-categories></app-list-categories>
+        </ul>
+        <a class="dropdown-toggle" [routerLink]="['/all-services']" routerLinkActive="nav-selected" (click)="onShowItem2()">Services</a>
+        <ul class="d-flex flex-column" *ngIf="services">
+          <app-list-services></app-list-services>
+        </ul>
+        <a [routerLink]="['/about-us']" routerLinkActive="nav-selected">About us</a>
+      </div>
+      <hr>
+      <a href="#">Sign in / Sign up</a>
+      <a *ngIf="userCurrentProfile">{{userCurrentProfile.name}}</a>
+    </div>
+  </div>
+</div>

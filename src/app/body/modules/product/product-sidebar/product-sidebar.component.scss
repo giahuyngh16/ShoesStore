@@ -1,0 +1,14 @@
+input:hover,
+label:hover {
+  cursor: pointer;
+}
+
+.form-check-input:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.form-check-input:checked {
+  background-color: #333 !important;
+  border: #333 !important;
+}

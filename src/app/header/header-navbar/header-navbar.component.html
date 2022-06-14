@@ -1,0 +1,26 @@
+<div class="header-navbar d-flex justify-content-end align-items-center">
+  <div class="ms-5">
+    <a [routerLink]="['/home']" routerLinkActive="nav-selected">Home</a>
+  </div>
+  <div class="ms-5 dropdown">
+    <a [routerLink]="['/all-products']"routerLinkActive="nav-selected" class="dropdown-toggle">Products</a>
+    <div class="dropdown-product-items">
+      <app-list-categories></app-list-categories>
+    </div>
+  </div>
+  <div class="ms-5 dropdown">
+    <a [routerLink]="['/all-services']" routerLinkActive="nav-selected" class="dropdown-toggle">Services</a>
+    <div class="dropdown-service-items">
+      <app-list-services></app-list-services>
+    </div>
+  </div>
+  <div class="ms-5">
+    <a [routerLink]="['/about-us']" routerLinkActive="nav-selected">About us</a>
+  </div>
+  <div class="ms-5">
+    <a [routerLink]="['/cart']" routerLinkActive="nav-selected">
+      <img src="../../assets/image/icon/shopping-bag.png" alt="">
+      <span class="main-text-color">0</span>
+    </a>
+  </div>
+</div>

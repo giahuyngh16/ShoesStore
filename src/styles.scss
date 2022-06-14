@@ -1,0 +1,72 @@
+/* Global styles */
+@import "../node_modules/bootstrap/scss/bootstrap";
+@import "./app/shared/colors";
+
+html,
+body {
+  height: 100%;
+  font-size: 100%;
+}
+body {
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+a {
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.main-text {
+  color: $main-color;
+}
+.main-bg {
+  background-color: $main-color;
+}
+
+p {
+  font-size: 16px;
+  color: #707070;
+  line-height: 28px;
+}
+
+.text-active {
+  color: $main-color;
+}
+
+html::-webkit-scrollbar {
+  width: 10px;
+
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #888;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: #333;
+  }
+}
+
+.py-7 {
+  padding: 70px 0;
+}
+
+.h-full {
+  height: 100%;
+}
+.w-full {
+  width: 100%;
+}
+
+.nav-selected {
+  color: $main-color !important;
+}
+
+/* Phone */
+@media (max-width: 480px) {
+  .py-7 {
+    padding: 40px 0;
+  }
+}

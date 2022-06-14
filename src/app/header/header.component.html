@@ -1,0 +1,32 @@
+<div class="header" >
+  <div class="header-top">
+    <div class="container px-3 d-flex justify-content-between">
+      <p>Hotline:<span><a class="hotline" href="tel:0933090455"> 0933090455</a></span></p>
+      <div class="d-flex align-items-center">
+        <ng-container *ngIf="!userCurrentProfile else notLogin">
+        <a [routerLink]="['/login']" >Sign in</a>
+        <a href="#">Sign up</a>
+        </ng-container>
+      </div>
+      <ng-template #notLogin class="d-flex align-items-center">
+        <a>{{userCurrentProfile.name}}</a>
+        <a (click)="onLogout()">Logout</a>
+      </ng-template>
+    </div>
+  </div>
+  <div class="header-nav">
+    <div class="container px-3">
+      <div class="d-flex align-items-center">
+        <div class="col-md-4 d-flex align-items-center">
+          <app-logo></app-logo>
+        </div>
+        <div class="col-md-8">
+          <app-header-navbar></app-header-navbar>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="header-mobile">
+  <app-header-mobile></app-header-mobile>
+</div>

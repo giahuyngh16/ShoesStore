@@ -1,0 +1,9 @@
+@import "../../colors";
+
+a {
+  color: #707070;
+  &:hover {
+    cursor: pointer;
+    color: $main-color;
+  }
+}

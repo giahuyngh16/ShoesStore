@@ -1,0 +1,30 @@
+.product-filter {
+  float: right;
+  position: relative;
+}
+
+span {
+  width: 100px;
+  margin-top: 9px;
+}
+
+.product-filter-box {
+  position: absolute;
+  width: 120px;
+  right: 0;
+  background-color: #fff;
+  text-align: center;
+}
+
+.form-select {
+  height: 45px;
+}
+
+.form-select:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.form-select:selected {
+  border: 1px solid #707070;
+}

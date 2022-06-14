@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,GAAG,CAAC;EACF,MAAM,EAAE,IAAI;CAKb;;AAND,AAEE,GAFC,CAED,MAAM,CAAC;EACL,MAAM,EAAE,OAAO;EACf,OAAO,EAAE,GAAG;CACb",
+    "sources": [
+        "logo.component.scss"
+    ],
+    "names": [],
+    "file": "logo.component.css"
+}

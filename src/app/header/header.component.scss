@@ -1,0 +1,62 @@
+@import "./../shared/colors";
+
+.header {
+  width: 100%;
+  position: fixed;
+  z-index: 5;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px,
+    rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+}
+
+.header-top {
+  background-color: #eee;
+}
+
+.header-top p {
+  margin: 0;
+  padding: 6px 0;
+}
+
+.header-nav {
+  background-color: #fff;
+}
+
+.header .container {
+  height: 100%;
+}
+
+span {
+  font-weight: 600;
+}
+
+.header-top .container .hotline {
+  padding: 0 !important;
+}
+
+.header-top a {
+  color: #707070;
+  padding-left: 16px;
+  &:first-child {
+    padding-right: 16px;
+  }
+  &:nth-child(2) {
+    border-left: 1px solid #999;
+  }
+  &:hover {
+    cursor: pointer;
+    color: $main-color;
+  }
+}
+
+.header-mobile {
+  display: none;
+}
+
+@media (max-width: 1023px) {
+  .header {
+    display: none;
+  }
+  .header-mobile {
+    display: block;
+  }
+}
