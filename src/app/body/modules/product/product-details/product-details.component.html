@@ -20,22 +20,22 @@
         <div class="detail-content col-lg-6 ps-5">
           <div class="">
             <h1>{{productDetail?.name}}</h1>
-            <p>{{productDetail?.priceVND}}</p>
+            <div class="price-item">{{productDetail?.priceUSD | maskCurrency}}</div>
             <p>
               {{productDetail?.description}}
             </p>
             <h3>Size:</h3>
-            <div class="box-size d-flex flex-wrap justify-content-start">
+            <div class="box-size d-flex flex-wrap justify-content-start size-container">
               <div *ngFor="let size of sizeProductInfors" class="col-lg-3 mb-3">
-                <div class="box-size-item">
-                  <input  type="submit" value={{size.productSize}}>
+                <div class="box-size-item" >
+                  <button class="size-item" [class.selected-size]="selectedSize?.id === size?.id" [disabled]="!size?.isAvailable" (click)="onSizeChange(size)">{{size?.productSize | maskSize}}</button>
                 </div>
               </div>
             </div>
             <br />
             <div class="d-flex">
               <h3>Quantity:</h3>
-              <input min="0" type="number" name="1" id="" value="1" />
+              <input min="0" type="number" name="quantity" [(ngModel)]="selectedQuantity" (change)="onQuantityChange($event)" />
             </div>
             <button class="mt-5 py-3 px-5 btn btn-black">ADD TO CART</button>
           </div>

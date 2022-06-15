@@ -1,0 +1,129 @@
+.pagin-bar {
+  padding: 0px 10px 20px 10px;
+}
+
+.m-datatable__pager-nav {
+  margin: 10px 0 0 0;
+  padding: 0;
+  display: inline-block;
+}
+
+.m-datatable__pager-nav li {
+  padding: 0;
+  margin-right: 5px;
+  display: inline-block;
+}
+
+.m-datatable__pager-nav li .m-datatable__pager-link {
+  cursor: pointer;
+  display: inline-block;
+  height: 2.25rem;
+  min-width: 2.25rem;
+  vertical-align: middle;
+  padding: 0.5rem;
+  border-radius: 50%;
+  text-align: center;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -moz-justify-content: center;
+  -ms-justify-content: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -moz-align-items: center;
+  -ms-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 1rem;
+  line-height: 1rem;
+  font-weight: 400;
+}
+
+.m-datatable__pager-nav li .m-datatable__pager-link--active {
+  background: #7bbd1e;
+  color: #fff;
+}
+
+.m-datatable__pager-nav li .m-datatable__pager-link--first,
+.m-datatable__pager-link--prev,
+.m-datatable__pager-link--next,
+.m-datatable__pager-link--last {
+  background-color: #f4f5f8;
+}
+
+.m-datatable__pager-nav li .m-datatable__pager-link:hover {
+  background: #7bbd1e;
+  color: #fff;
+}
+
+.m-datatable__pager-nav li .m-datatable__pager-link i {
+  font-size: 1rem;
+  text-align: center;
+  display: inline-block;
+}
+
+/* --------------------------------------- */
+
+.selectdiv {
+  position: relative;
+  margin-top: 10px;
+}
+
+.selectdiv:after {
+  content: "\f078";
+  font: normal normal normal 17px/1 FontAwesome;
+  left: 50px;
+  top: 6px;
+  position: absolute;
+  pointer-events: none;
+}
+
+.selectdiv select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 80px;
+  height: 31px;
+  padding-left: 19px;
+  border-radius: 20px;
+  outline: none;
+  &:focus {
+      border-color: #7bbd1e;
+  }
+}
+
+.pagin-bar button {
+  border: none;
+  outline: none;
+}
+
+.m-datatable__pager-nav li .m-datatable__pager-link {
+  cursor: pointer;
+  display: inline-block;
+  height: 2.25rem;
+  min-width: 2.25rem;
+  vertical-align: middle;
+  padding: 0.5rem;
+  border-radius: 50%;
+  text-align: center;
+  position: relative;
+  display: -ms-flexbox;
+  display: flex;
+  -moz-justify-content: center;
+  -ms-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -moz-align-items: center;
+  -ms-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 1rem;
+  line-height: 1rem;
+  font-weight: 400;
+}

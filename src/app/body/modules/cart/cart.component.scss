@@ -1,0 +1,93 @@
+.cart {
+  background-color: #f2f2f2;
+  min-height: 56vh;
+}
+.cart h1 {
+  font-size: 36px;
+  font-weight: 500;
+}
+.cart-detail {
+  padding: 30px 0;
+  width: 100%;
+  background-color: #fff;
+  box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+}
+h4, h6, p, h3, h2, h5  {
+  margin-bottom: 0;
+}
+
+h6 {
+  font-size: 12px;
+}
+
+.cart-box-img img {
+  width: 100%;
+}
+.bold {
+  font-weight: 550;
+}
+
+.box-size, .box-remove, .box-quantity button {
+  width: 50px;
+  height: 50px;
+  padding: 10px;
+  border-radius: 5px;
+  border: 2px solid #bbb;
+}
+
+.box-size:hover {
+  cursor: not-allowed;
+}
+
+
+.box-quantity button {
+  background-color: #ff914d;
+  color: #fff;
+  font-weight: 400;
+  font-size: 22px;
+  border: none;
+  border-radius: 0;
+}
+
+.quantity-result {
+  padding: 9px 20px;
+  background-color: #fff;
+  border-top: 2px solid #ccc;
+  border-bottom: 2px solid #ccc;
+}
+.bg-grey {
+  background-color: #aaa !important;
+}
+
+.box-remove img {
+  width: 100%;
+  padding: 5px;
+  transition: transform .5s;
+}
+
+.box-remove:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+}
+
+.total-price h2 {
+  font-size: 24px;
+  font-weight: 500;
+  padding: 7px 40px;
+  border: 2px solid #aaa;
+}
+
+.total-price button {
+  background-color: #ff914d;
+  padding: 6px 40px;
+  font-size: 24px;
+  font-weight: 500;
+  color: #fff;
+  border: none;
+  transition: transform .2s;
+}
+
+.total-price button:hover {
+  cursor: pointer;
+  transform: scale(1.05);
+}
