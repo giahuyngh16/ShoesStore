@@ -53,7 +53,7 @@ input[type="number"]{
 }
 
 
-input[type="submit"] {
+.size-item {
   border: none;
   padding: 10px 48px;
   border-radius: 100px;
@@ -72,4 +72,18 @@ input[type="submit"] {
   &:hover {
     cursor: not-allowed;
   }
+}
+
+.size-container {
+  gap: 15px;
+}
+
+.selected-size {
+  background-color: #eee;
+  border-color: #000;
+}
+
+.price-item {
+  font-weight: 700;
+  font-size: 25px;
 }

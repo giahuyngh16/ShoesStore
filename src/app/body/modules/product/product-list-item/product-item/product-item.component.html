@@ -1,13 +1,13 @@
-<a [routerLink]="['/all-products/details']">
+<a>
   <div class="product-box my-2">
     <img [src]="'assets' + product?.pic" alt="">
     <div class="d-flex justify-content-between pt-3 px-3">
       <div class="col-sm-6">
         <h6>{{ product?.name }}</h6>
-        <p>{{ product?.priceVND }}.VNĐ</p>
+        <p>{{ product?.priceUSD | maskCurrency }}</p>
       </div>
       <div class="col-sm-6 d-flex justify-content-end">
-        <button>DETAILS</button>
+        <button routerLink="/details/{{product.id}}">DETAILS</button>
       </div>
     </div>
   </div>

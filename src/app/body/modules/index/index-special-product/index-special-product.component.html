@@ -7,7 +7,7 @@
           <div class="d-flex justify-content-between pt-3">
             <div class="col-sm-6">
               <h6>{{product?.name}}</h6>
-              <p>{{product?.priceVND}}</p>
+              <p>{{product?.priceVND | maskCurrency}}</p>
             </div>
             <div class="col-sm-6 d-flex justify-content-end">
               <button routerLink="/details/{{product.id}}">DETAILS</button>

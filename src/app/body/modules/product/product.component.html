@@ -4,8 +4,8 @@
       <div class="side-bar col-lg-3">
         <app-product-sidebar
         [brandInfor]="brandInfor"
-        [productTypes]="productTypes"
-        (productTypeId) ="getValue($event)"
+        [types]="productTypes"
+        (productTypeId)="getValue($event)"
         ></app-product-sidebar>
       </div>
       <div class="col-lg-9 d-flex flex-column">
@@ -20,4 +20,9 @@
       </div>
     </div>
   </div>
+  <div>
+    <app-pagination [model]="pagingModel" [(data)]="productPagingViewModel" (dataModelChangeEvent)="onPagingChanged($event)" > </app-pagination>
+  </div>
 </div>
+
+

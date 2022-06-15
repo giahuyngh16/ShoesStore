@@ -1,0 +1,49 @@
+<div class="pagin-bar" *ngIf="data.productsInfor && data.productsInfor.length > 0">
+  <pagination-template #pagin="paginationApi" [id]="id" (pageChange)="onChangeCurrentPage($event)">
+    <ul class="custom-pagination m-datatable__pager-nav">
+      <li>
+        <button [disabled]="pagin.isFirstPage()" class="m-datatable__pager-link m-datatable__pager-link--first"
+          (click)="pagin.setCurrent(1)">
+          <i class="la la-angle-double-left"></i>
+        </button>
+      </li>
+      <li class="pagination-previous">
+        <button [disabled]="pagin.isFirstPage()" (click)="pagin.previous()"
+          class="m-datatable__pager-link m-datatable__pager-link--prev">
+          <i class="la la-angle-left"></i>
+        </button>
+      </li>
+      <li *ngFor="let page of pagin.pages">
+        <a class="m-datatable__pager-link" (click)="pagin.setCurrent(page.value)"
+          *ngIf="pagin.getCurrent() !== page.value">
+          <span>{{ page.label }}</span>
+        </a>
+        <div class="m-datatable__pager-link" [class.m-datatable__pager-link--active]="pagin.getCurrent() === page.value"
+          *ngIf="pagin.getCurrent() === page.value">
+          <span>{{ page.label }}</span>
+        </div>
+      </li>
+
+      <li class="pagination-next" [class.disabled]="pagin.isLastPage()">
+        <button [disabled]="pagin.isLastPage()" class="m-datatable__pager-link m-datatable__pager-link--next"
+          (click)="pagin.next()">
+          <i class="la la-angle-right"></i>
+        </button>
+      </li>
+      <li>
+        <button [disabled]="pagin.isLastPage()" class="m-datatable__pager-link m-datatable__pager-link--last"
+          (click)="pagin.setCurrent(pagin.getLastPage())">
+          <i class="la la-angle-double-right"></i>
+        </button>
+      </li>
+    </ul>
+  </pagination-template>
+  <div class="pull-right">
+    <div class="selectdiv">
+      <select [(ngModel)]="model.itemsPerPage" (change)="changeSelectPerPage($event.target.value)">
+        <option [value]="option.value" *ngFor="let option of OPTION_PAGE">{{option.value}}</option>
+      </select>
+      <span> Displaying {{minItem}} - {{maxItem}} of {{model.totalItems || data.amountProduct || data.productsInfor?.length}} records</span>
+    </div>
+  </div>
+</div>

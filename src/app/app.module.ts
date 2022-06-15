@@ -2,6 +2,7 @@ import { LoginComponent } from './user/login/login.component';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
@@ -42,6 +43,11 @@ import { AuthService } from './core/services/auth.service';
 import { LoadingService } from './core/services/loading.service';
 import { WrapperComponent } from './wrapper/wrapper.component';
 import { MaskCurrencyPipe } from './core/pipes/mask-currency.pipe';
+import { PaginationComponent } from './core/components/pagination/pagination.component';
+import { NgZorroAntdModule } from 'ng-zorro-antd';
+import { MaskPipe, NgxMaskModule } from 'ngx-mask';
+import { MaskSizePipe } from './core/pipes/mask-size.pipe';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 @NgModule({
   declarations: [
@@ -77,6 +83,9 @@ import { MaskCurrencyPipe } from './core/pipes/mask-currency.pipe';
     ProductDetailsComponent,
     LoginComponent,
     WrapperComponent,
+    PaginationComponent,
+    MaskCurrencyPipe,
+    MaskSizePipe
   ],
   imports: [
     BrowserModule,
@@ -86,13 +95,23 @@ import { MaskCurrencyPipe } from './core/pipes/mask-currency.pipe';
     CommonModule,
     RouterModule,
     HttpClientModule,
+    NgZorroAntdModule,
+    NgxPaginationModule,
+    BrowserAnimationsModule,
+    NgxMaskModule.forRoot({
+      thousandSeparator: ',',
+      specialCharacters: [',']
+    })
   ],
   providers: [
     RedirectGuardService,
     AuthGuardService,
     AuthService,
     LoadingService,
-    MaskCurrencyPipe],
+    MaskCurrencyPipe,
+    MaskSizePipe,
+    MaskPipe
+    ],
   bootstrap: [AppComponent],
 })
 export class AppModule { }

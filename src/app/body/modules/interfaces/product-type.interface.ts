@@ -1,8 +1,17 @@
 import { PaginationModel } from "../../models/pagination-model";
 
 export interface ProductsBrandPageViewModel {
+  skip: number;
+  take: number;
   amountProduct: number;
   typeOfBrand: TypeOfBrandInforModel;
+  productsInfor: ProductInforModel[];
+}
+
+export interface ProductPagingViewModel {
+  skip: number;
+  take: number;
+  amountProduct: number;
   productsInfor: ProductInforModel[];
 }
 

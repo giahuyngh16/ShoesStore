@@ -2,8 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ISortOption } from '../../models/sort.interface';
 import { ProductService } from '../../services/product.service';
-import { BrandInforModel, IProductFilter, ProductInforModel, TypeInforModel } from '../interfaces/product-type.interface';
-import { Subject, switchMap } from 'rxjs';
+import { BrandInforModel, IProductFilter, ProductInforModel, ProductPagingViewModel, TypeInforModel } from '../interfaces/product-type.interface';
+import { Subject } from 'rxjs';
+import * as _ from 'lodash';
+import { PagingModel } from '../../models/paging.model';
 
 @Component({
   selector: 'app-product',
@@ -15,14 +17,18 @@ export class ProductComponent implements OnInit {
   productsInfor: ProductInforModel[];
   brandInfor: BrandInforModel;
   productTypes: TypeInforModel[];
-
+  amountProduct: number;
   brandId: number;
+  pagingModel = new PagingModel();
   reset$ = new Subject<boolean>();
+  productPagingViewModel = {} as ProductPagingViewModel;
 
   constructor(
     private _avtivatedRoute: ActivatedRoute,
     private _productService: ProductService,
-  ) { }
+  ) {
+
+  }
 
   ngOnInit() {
    this._avtivatedRoute.params.subscribe(param => {
@@ -30,6 +36,9 @@ export class ProductComponent implements OnInit {
     this.filter.brandId = this.brandId;
     this._loadListProductOfBrand();
    });
+    this._avtivatedRoute.queryParams.subscribe(queryParams => {
+      this.getValue( +queryParams['type']);
+    })
   }
 
   ngOnDestroy() {
@@ -54,12 +63,25 @@ export class ProductComponent implements OnInit {
     typeId: null,
   };
 
+  public onPagingChanged(newPagingModel: PagingModel) {
+    this.pagingModel = newPagingModel;
+    this.filter.skip = newPagingModel.skip;
+    this.filter.take = newPagingModel.itemsPerPage;
+    this._loadListProductOfBrand();
+  }
+
   private _loadListProductOfBrand() {
     this._productService.getProducts(this.filter).subscribe(response => {
       this.productsInfor = response.data.productsInfor;
       this.brandInfor = response.data.typeOfBrand.brandInfor;
-      this.productTypes =response.data.typeOfBrand.typeInfors;
-      this.filter.total = response.data.amountProduct;
+      this.productTypes = response.data.typeOfBrand.typeInfors;
+      this.pagingModel.totalItems = response.data.amountProduct;
+      this.productPagingViewModel = {
+        amountProduct: response.data.amountProduct,
+        skip: response.data.skip,
+        take: response.data.take,
+        productsInfor: response.data.productsInfor,
+      }
     });
   }
   getValue(productTypeId:number){
