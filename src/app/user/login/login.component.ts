@@ -1,8 +1,9 @@
 import { ActivatedRoute, Router } from '@angular/router';
-import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Component, OnInit } from "@angular/core";
 import { first } from 'rxjs/operators';
 import { AuthService } from 'src/app/core/services/auth.service';
+import { NotifierService } from 'src/app/core/services/notifier.service';
 
 @Component({
   selector: 'app-login',
@@ -12,17 +13,18 @@ import { AuthService } from 'src/app/core/services/auth.service';
 
 export class LoginComponent implements OnInit {
 
-  loginForm: UntypedFormGroup;
+  loginForm: FormGroup;
   loading = false;
   submitted = false;
   returnUrl: string;
   error = '';
 
   constructor(
-    private _formBuilder: UntypedFormBuilder,
+    private _formBuilder: FormBuilder,
     private _route: ActivatedRoute,
     private _router: Router,
-    private _authService: AuthService
+    private _authService: AuthService,
+    private _notifierService: NotifierService,
   ) {
     if (this._authService.getUserInfo()) {
       this._router.navigate(['home']);
@@ -49,7 +51,8 @@ export class LoginComponent implements OnInit {
       .pipe(first())
       .subscribe(
         data => {
-          this._router.navigate(['home']);
+          this._notifierService.showToastrSuccessMessage('Register Successfully');
+          setTimeout( () => {this._router.navigate(['home'])}, 1000);
         },
         error => {
           this.error = error.error.Message;

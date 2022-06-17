@@ -3,7 +3,7 @@
     <a [routerLink]="['/home']" routerLinkActive="nav-selected">Home</a>
   </div>
   <div class="ms-5 dropdown">
-    <a routerLinkActive="nav-selected" class="dropdown-toggle">Products</a>
+    <a (click)="onNavigateToProduct()" [class.nav-selected]="isProductlinkActive" class="dropdown-toggle">Products</a>
     <div class="dropdown-product-items">
       <app-list-categories></app-list-categories>
     </div>
@@ -20,7 +20,7 @@
   <div class="ms-5">
     <a [routerLink]="['/cart']" routerLinkActive="nav-selected">
       <img src="../../assets/image/icon/shopping-bag.png" alt="">
-      <span class="main-text-color">0</span>
+      <span class="main-text-color">{{totalProductInCart}}</span>
     </a>
   </div>
 </div>

@@ -17,9 +17,6 @@
               <div class="col-lg-9">
                 <h4>Quantity</h4>
               </div>
-              <div class="col-lg-3">
-                <h4 class="text-center">Removed</h4>
-              </div>
             </div>
             <div class="col-lg-2">
               <h4 class="text-center">Price</h4>
@@ -27,58 +24,19 @@
           </div>
         </div>
         <hr />
-        <div class="d-flex mt-3">
+        <div *ngFor="let item of productCarts" class="d-flex mt-3">
           <div class="col-lg-6 d-flex align-items-center">
             <div class="col-lg-10 d-flex align-items-center">
               <div class="col-lg-2 cart-box-img">
                 <img src="../../../../assets/image/product/adidas.jpg" alt="" />
               </div>
               <div class="col-lg-10 px-3">
-                <h3 class="bold">Brand</h3>
-                <h5>Name</h5>
+                <h5>{{item?.name}}</h5>
               </div>
             </div>
             <div class="col-lg-2 d-flex align-items-center justify-content-center">
               <div class="box-size">
-                <p class="text-center">M</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-6 d-flex align-items-center">
-            <div class="col-lg-10 d-flex align-items-center">
-              <div class="col-lg-9">
-                <div class="box-quantity d-flex">
-                  <button class="bg-grey">-</button>
-                  <p class="quantity-result">0</p>
-                  <button>+</button>
-                </div>
-              </div>
-              <div class="col-lg-3 d-flex align-items-center justify-content-center">
-                <div class="box-remove">
-                  <img src="../../../../assets/image/icon/backer.png" alt="">
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-2">
-              <h4 class="text-center">Price</h4>
-            </div>
-          </div>
-        </div>
-        <hr>
-        <div class="d-flex mt-3">
-          <div class="col-lg-6 d-flex align-items-center">
-            <div class="col-lg-10 d-flex align-items-center">
-              <div class="col-lg-2 cart-box-img">
-                <img src="../../../../assets/image/product/adidas.jpg" alt="" />
-              </div>
-              <div class="col-lg-10 px-3">
-                <h3 class="bold">Brand</h3>
-                <h5>Name</h5>
-              </div>
-            </div>
-            <div class="col-lg-2 d-flex align-items-center justify-content-center">
-              <div class="box-size">
-                <p class="text-center">M</p>
+                <p class="text-center">{{item?.size}}</p>
               </div>
             </div>
           </div>
@@ -86,25 +44,20 @@
             <div class="col-lg-10 d-flex align-items-center justify-content-center">
               <div class="col-lg-9">
                 <div class="box-quantity d-flex">
-                  <button class="bg-grey">-</button>
-                  <p class="quantity-result">0</p>
-                  <button>+</button>
-                </div>
-              </div>
-              <div class="col-lg-3 d-flex align-items-center justify-content-center">
-                <div class="box-remove">
-                  <img src="../../../../assets/image/icon/backer.png" alt="">
+                  <button (click)="onRemoveProduct(item)" class="bg-grey">-</button>
+                  <p class="quantity-result">{{item?.quantity}}</p>
+                  <button (click)="onAddProduct(item)">+</button>
                 </div>
               </div>
             </div>
             <div class="col-lg-2">
-              <h4 class="text-center">Price</h4>
+              <h4 class="text-center">{{(item.priceUSD) * (item.quantity)| maskCurrency}}</h4>
             </div>
           </div>
         </div>
         <hr>
         <div class="total-price d-flex justify-content-end align-items-center">
-          <h2 class="pe-4">TOTAL: $5000</h2>
+          <h2 class="pe-4">TOTAL: {{totalMoney | maskCurrency}}</h2>
           <button>CHECK OUT</button>
         </div>
       </div>

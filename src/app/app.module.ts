@@ -1,3 +1,4 @@
+import { ToastContainerModule, ToastrModule, ToastrService } from 'ngx-toastr';
 import { LoginComponent } from './user/login/login.component';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -48,6 +49,8 @@ import { NgZorroAntdModule } from 'ng-zorro-antd';
 import { MaskPipe, NgxMaskModule } from 'ngx-mask';
 import { MaskSizePipe } from './core/pipes/mask-size.pipe';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { RegisterComponent } from './user/register/register.component';
+import { NotifierService } from './core/services/notifier.service';
 
 @NgModule({
   declarations: [
@@ -85,7 +88,8 @@ import { NgxPaginationModule } from 'ngx-pagination';
     WrapperComponent,
     PaginationComponent,
     MaskCurrencyPipe,
-    MaskSizePipe
+    MaskSizePipe,
+    RegisterComponent,
   ],
   imports: [
     BrowserModule,
@@ -97,7 +101,17 @@ import { NgxPaginationModule } from 'ngx-pagination';
     HttpClientModule,
     NgZorroAntdModule,
     NgxPaginationModule,
+    ToastContainerModule,
     BrowserAnimationsModule,
+    ToastrModule.forRoot({
+      timeOut: 3000,
+      extendedTimeOut: 1000,
+      easeTime: 500,
+      positionClass: 'toast-bottom-right',
+      preventDuplicates: true,
+      tapToDismiss: true,
+      maxOpened: 0
+    }),
     NgxMaskModule.forRoot({
       thousandSeparator: ',',
       specialCharacters: [',']
@@ -110,7 +124,9 @@ import { NgxPaginationModule } from 'ngx-pagination';
     LoadingService,
     MaskCurrencyPipe,
     MaskSizePipe,
-    MaskPipe
+    MaskPipe,
+    NotifierService,
+    ToastrService
     ],
   bootstrap: [AppComponent],
 })
