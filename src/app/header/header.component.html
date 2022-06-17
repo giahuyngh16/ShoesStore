@@ -5,7 +5,7 @@
       <div class="d-flex align-items-center">
         <ng-container *ngIf="!userCurrentProfile else notLogin">
         <a [routerLink]="['/login']" >Sign in</a>
-        <a href="#">Sign up</a>
+        <a [routerLink]="['/register']">Sign up</a>
         </ng-container>
       </div>
       <ng-template #notLogin class="d-flex align-items-center">

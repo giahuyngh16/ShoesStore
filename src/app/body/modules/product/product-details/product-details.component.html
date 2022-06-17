@@ -10,11 +10,11 @@
     <div class="product-detail mt-4 px-5">
       <div class="d-flex justify-content-between px-5">
         <div class="col-lg-6 px-5">
-          <img src="/assets/image/product/nike1.jfif" alt="" />
+          <img [src]="'assets'+ productDetail?.pic1" alt="" />
           <div class="items d-flex pt-3">
-            <img src="/assets/image/product/nike1.jfif" alt="" />
-            <img src="/assets/image/product/nike1.jfif" alt="" />
-            <img src="/assets/image/product/nike1.jfif" alt="" />
+            <img [src]="'assets'+ productDetail?.pic1" alt="" />
+            <img [src]="'assets'+ productDetail?.pic2" alt="" />
+            <img [src]="'assets'+ productDetail?.pic3" alt="" />
           </div>
         </div>
         <div class="detail-content col-lg-6 ps-5">
@@ -37,7 +37,7 @@
               <h3>Quantity:</h3>
               <input min="0" type="number" name="quantity" [(ngModel)]="selectedQuantity" (change)="onQuantityChange($event)" />
             </div>
-            <button class="mt-5 py-3 px-5 btn btn-black">ADD TO CART</button>
+            <button (click)="AddProductToCart()" class="mt-5 py-3 px-5 btn btn-black">ADD TO CART</button>
           </div>
         </div>
       </div>

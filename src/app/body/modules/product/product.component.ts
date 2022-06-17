@@ -1,3 +1,4 @@
+import { NotifierService } from './../../../core/services/notifier.service';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ISortOption } from '../../models/sort.interface';
@@ -26,6 +27,7 @@ export class ProductComponent implements OnInit {
   constructor(
     private _avtivatedRoute: ActivatedRoute,
     private _productService: ProductService,
+    private _notifierService: NotifierService
   ) {
 
   }
@@ -83,7 +85,9 @@ export class ProductComponent implements OnInit {
         productsInfor: response.data.productsInfor,
       }
     });
+    this._notifierService.showToastrSuccessMessage('Load data successfully');
   }
+
   getValue(productTypeId:number){
     this.filter.typeId = productTypeId;
     this._loadListProductOfBrand();

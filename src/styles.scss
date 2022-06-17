@@ -70,3 +70,7 @@ html::-webkit-scrollbar {
     padding: 40px 0;
   }
 }
+
+#toast-container>div {
+  width: 450px !important;
+}
