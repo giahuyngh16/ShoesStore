@@ -11,6 +11,7 @@ import { ServiceComponent } from './body/modules/service/service.component';
 import { RouterModule, Routes } from '@angular/router';
 import { WrapperComponent } from './wrapper/wrapper.component';
 import { RegisterComponent } from './user/register/register.component';
+import { CheckoutCartInforComponent } from './body/modules/checkout-cart-infor/checkout-cart-infor.component';
 
 const routes: Routes = [
   { path: '', component: WrapperComponent, children: [
@@ -20,6 +21,7 @@ const routes: Routes = [
     { path: 'all-services', component: ServiceComponent },
     { path: 'about-us', component: AboutUsComponent },
     { path: 'cart', component: CartComponent },
+    { path: 'checkout-cart', component: CheckoutCartInforComponent },
     { path: '', redirectTo: 'home', pathMatch: 'full' },
   ]},
   { path: 'login', component: LoginComponent },

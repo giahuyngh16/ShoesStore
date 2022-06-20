@@ -8,3 +8,12 @@ export interface CartModel {
   priceVND: number;
   maxQuantity: number;
 }
+
+export interface OrderParamModel {
+  productCheckoutModel: [{
+    id: number;
+    quantity: number;
+  }],
+  paymentMethod: number;
+  address: string;
+}

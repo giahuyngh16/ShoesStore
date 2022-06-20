@@ -58,7 +58,7 @@
         <hr>
         <div class="total-price d-flex justify-content-end align-items-center">
           <h2 class="pe-4">TOTAL: {{totalMoney | maskCurrency}}</h2>
-          <button>CHECK OUT</button>
+          <button (click)="checkoutCart(productCarts)">CHECK OUT</button>
         </div>
       </div>
     </div>

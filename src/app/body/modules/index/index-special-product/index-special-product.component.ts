@@ -1,3 +1,5 @@
+import { Router } from '@angular/router';
+import { LoadingService } from './../../../../core/services/loading.service';
 import { ProductService } from './../../../services/product.service';
 import { IProductDetail } from './../../interfaces/product-detail.interface';
 import { Component, OnInit } from '@angular/core';
@@ -11,11 +13,18 @@ export class IndexSpecialProductComponent implements OnInit {
   popularProductList: IProductDetail[];
 
   constructor(
-    private _productService: ProductService
+    private _productService: ProductService,
+    private _loadingService: LoadingService,
+    private _router: Router,
   ) { }
 
-  ngOnInit(): void {
+  ngOnInit() {
     this._loadListProductPopular();
+  }
+
+  navigateToDetail(id) {
+    this._loadingService.showLoading1();
+    this._router.navigate([`/details/${id}`]);
   }
 
   private _loadListProductPopular() {
@@ -23,5 +32,7 @@ export class IndexSpecialProductComponent implements OnInit {
       this.popularProductList = product.data;
     })
   }
+
+
 
 }

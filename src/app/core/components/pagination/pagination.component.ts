@@ -67,7 +67,6 @@ export class PaginationComponent implements OnInit {
 
     valueClone.amountProduct = valueClone && valueClone.amountProduct ? valueClone.amountProduct : valueClone.productsInfor ? valueClone.productsInfor.length : 0;
 
-    console.log(valueClone);
     return valueClone;
   }
 }

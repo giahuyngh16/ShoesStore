@@ -87,7 +87,7 @@ export class ProductDetailsComponent implements OnInit {
         cart = this.onAddProductToCartSucess(productsInCart);
       }
       else {
-        this._notifierService.showToastrWarningMessage('Item instock');
+        this._notifierService.showToastrWarningMessage('Please check product your cart', 'Item instock !');
       }
 
     }else {
@@ -99,7 +99,7 @@ export class ProductDetailsComponent implements OnInit {
   }
 
   private onAddProductToCartSucess(productsInCart: CartModel[]): string{
-    this._notifierService.showToastrSuccessMessage('Add product to cart successfully');
+    this._notifierService.showToastrSuccessMessage('Your product has been added to cart. Thank you for shopping with us!');
     return  JSON.stringify(productsInCart);
   }
 }
