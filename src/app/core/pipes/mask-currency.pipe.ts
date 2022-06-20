@@ -10,7 +10,7 @@ export class MaskCurrencyPipe implements PipeTransform {
 
   transform(value: number): any {
     if (value) {
-      return (value < 0 ? '-' : '') + `$ ${this._maskPipe.transform(value, 'separator.2').toString()}`;
+      return (value < 0 ? '-' : '') + `$${this._maskPipe.transform(value, 'separator.2').toString()}`;
     } else {
       return '$';
     }

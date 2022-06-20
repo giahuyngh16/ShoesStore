@@ -1,14 +1,14 @@
 <div class="product-page">
   <div class="container">
     <div class="d-flex justify-content-between pt-3">
-      <div class="side-bar col-lg-3">
+      <div class="side-bar col-lg-2">
         <app-product-sidebar
         [brandInfor]="brandInfor"
         [types]="productTypes"
         (productTypeId)="getValue($event)"
         ></app-product-sidebar>
       </div>
-      <div class="col-lg-9 d-flex flex-column">
+      <div class="col-lg-10 d-flex flex-column">
         <div class="p-2">
           <app-product-fliter></app-product-fliter>
         </div>
@@ -21,7 +21,7 @@
     </div>
   </div>
   <div>
-    <app-pagination [model]="pagingModel" [(data)]="productPagingViewModel" (dataModelChangeEvent)="onPagingChanged($event)" > </app-pagination>
+    <app-pagination [model]="pagingModel" [(data)]="productPagingViewModel" (dataModelChangeEvent)="onPagingChanged($event)"></app-pagination>
   </div>
 </div>
 

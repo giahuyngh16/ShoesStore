@@ -2,7 +2,7 @@ import { CartService } from './../../../services/cart.service';
 import { NotifierService } from './../../../../core/services/notifier.service';
 import { MaskApplierService, MaskPipe } from 'ngx-mask';
 import { Router, ActivatedRoute } from '@angular/router';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { forkJoin, switchMap } from 'rxjs';
 import { ProductService } from 'src/app/body/services/product.service';
 import { BaseProductInfor, IProductDetailViewModel } from '../../interfaces/product-detail.interface';
@@ -39,10 +39,20 @@ export class ProductDetailsComponent implements OnInit {
    });
   }
 
+  imgSelected(src) {
+    let imgSelected = document.getElementById('defaultIMG') as HTMLImageElement;
+    imgSelected.src = 'assets'+src;
+  }
+
   onQuantityChange(event: Event): void {
     if( this.selectedQuantity > this.selectedSize.quantity){
       this.selectedQuantity = this.selectedSize.quantity;
     }
+  }
+
+  activeBtnSubmit() {
+    let btn = document.getElementById("btnSubmit");
+    btn.classList.add("activeBtnSubmit")
   }
 
   onSizeChange(size: BaseProductInfor): void {

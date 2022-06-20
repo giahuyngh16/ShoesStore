@@ -2,8 +2,17 @@
 
 .ms-5 > a {color: #707070; line-height: 70px;}
 
+.dropdown-toggle {
+  padding: 0;
+}
+
 a {
   color: #707070;
+  padding: 5px 20px !important;
+}
+
+.cart {
+  padding-right: 0 !important;
 }
 
 a:hover,

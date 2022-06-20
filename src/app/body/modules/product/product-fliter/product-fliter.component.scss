@@ -1,6 +1,6 @@
 .product-filter {
-  float: right;
-  position: relative;
+  float: right !important;
+  position: relative !important;
 }
 
 span {
@@ -9,15 +9,21 @@ span {
 }
 
 .product-filter-box {
-  position: absolute;
+  position: absolute !important;
   width: 120px;
   right: 0;
   background-color: #fff;
   text-align: center;
 }
 
+.text-end {
+  text-align: right;
+  padding-right: 20px;
+}
+
 .form-select {
   height: 45px;
+  padding: 5px 20px;
 }
 
 .form-select:focus {
@@ -26,5 +32,5 @@ span {
 }
 
 .form-select:selected {
-  border: 1px solid #707070;
+  border: 1px solid #707070 !important;
 }

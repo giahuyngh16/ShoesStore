@@ -27,7 +27,6 @@ import { IndexFounderComponent } from './body/modules/index/index-founder/index-
 import { IndexServiceComponent } from './body/modules/index/index-service/index-service.component';
 import { IndexSpecialProductComponent } from './body/modules/index/index-special-product/index-special-product.component';
 import { ServiceCleanComponent } from './body/modules/service/service-clean/service-clean.component';
-import { ServiceOrderComponent } from './body/modules/service/service-order/service-order.component';
 import { ServiceRepairComponent } from './body/modules/service/service-repair/service-repair.component';
 import { ProductFliterComponent } from './body/modules/product/product-fliter/product-fliter.component';
 import { ProductSidebarComponent } from './body/modules/product/product-sidebar/product-sidebar.component';
@@ -77,7 +76,6 @@ import { NotifierService } from './core/services/notifier.service';
     IndexServiceComponent,
     IndexSpecialProductComponent,
     ServiceCleanComponent,
-    ServiceOrderComponent,
     ServiceRepairComponent,
     ProductFliterComponent,
     ProductSidebarComponent,

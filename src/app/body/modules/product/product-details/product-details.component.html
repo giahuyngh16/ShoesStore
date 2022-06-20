@@ -1,34 +1,34 @@
 <div class="container">
   <div class="py-3">
-    <div class="path d-flex mt-3">
-      <a [routerLink]="['/all-products']">Products</a>
+    <div class="path d-flex">
+      <a class="ps-5" href="/all-products/{{brandInfor.id}}">Products</a>
       <span>/</span>
-      <a [routerLink]="['/all-products']">{{brandInfor?.name}}</a>
+      <a href="/all-products/{{brandInfor.id}}">{{brandInfor?.name}}</a>
       <span>/</span>
       <a class="active" [routerLink]="['/all-products']">Details</a>
     </div>
-    <div class="product-detail mt-4 px-5">
-      <div class="d-flex justify-content-between px-5">
+    <div class="product-detail mt-4">
+      <div class="d-flex justify-content-between">
         <div class="col-lg-6 px-5">
-          <img [src]="'assets'+ productDetail?.pic1" alt="" />
+          <img id="defaultIMG" [src]="'assets'+ productDetail?.pic1" alt="" />
           <div class="items d-flex pt-3">
-            <img [src]="'assets'+ productDetail?.pic1" alt="" />
-            <img [src]="'assets'+ productDetail?.pic2" alt="" />
-            <img [src]="'assets'+ productDetail?.pic3" alt="" />
+            <img (click)="imgSelected(productDetail?.pic1)" [src]="'assets'+ productDetail?.pic1" alt="" />
+            <img (click)="imgSelected(productDetail?.pic2)" [src]="'assets'+ productDetail?.pic2" alt="" />
+            <img (click)="imgSelected(productDetail?.pic3)" [src]="'assets'+ productDetail?.pic3" alt="" />
           </div>
         </div>
         <div class="detail-content col-lg-6 ps-5">
           <div class="">
             <h1>{{productDetail?.name}}</h1>
-            <div class="price-item">{{productDetail?.priceUSD | maskCurrency}}</div>
+            <div class="price-item price">{{productDetail?.priceUSD | maskCurrency}}</div>
             <p>
               {{productDetail?.description}}
             </p>
             <h3>Size:</h3>
-            <div class="box-size d-flex flex-wrap justify-content-start size-container">
-              <div *ngFor="let size of sizeProductInfors" class="col-lg-3 mb-3">
+            <div class="box-size d-flex flex-wrap justify-content-start size-container mt-4">
+              <div *ngFor="let size of sizeProductInfors" class="col-lg-3 mb-2">
                 <div class="box-size-item" >
-                  <button class="size-item" [class.selected-size]="selectedSize?.id === size?.id" [disabled]="!size?.isAvailable" (click)="onSizeChange(size)">{{size?.productSize | maskSize}}</button>
+                  <button class="size-item" [class.selected-size]="selectedSize?.id === size?.id" [disabled]="!size?.isAvailable" (click)="onSizeChange(size); activeBtnSubmit()">{{size?.productSize | maskSize}}</button>
                 </div>
               </div>
             </div>
@@ -37,7 +37,7 @@
               <h3>Quantity:</h3>
               <input min="0" type="number" name="quantity" [(ngModel)]="selectedQuantity" (change)="onQuantityChange($event)" />
             </div>
-            <button (click)="AddProductToCart()" class="mt-5 py-3 px-5 btn btn-black">ADD TO CART</button>
+            <button id="btnSubmit" (click)="AddProductToCart()" class="mt-5 py-3 px-5 btn btn-black">ADD TO CART</button>
           </div>
         </div>
       </div>

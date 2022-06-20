@@ -15,31 +15,31 @@ export class ProductService extends BaseService {
       '1',
       'Nike Air Fource 1',
       2000000,
-      '/assets/image/product/nike1.jfif'
+      '/assets/img/product/nike1.jfif'
     ),
     new Product(
       '2',
       'Nike Air Fource 2',
       2000000,
-      '/assets/image/product/nike1.jfif'
+      '/assets/img/product/nike1.jfif'
     ),
     new Product(
       '3',
       'Nike Air Fource 3',
       2000000,
-      '/assets/image/product/nike1.jfif'
+      '/assets/img/product/nike1.jfif'
     ),
     new Product(
       '4',
       'Nike Air Fource 4',
       2000000,
-      '/assets/image/product/nike1.jfif'
+      '/assets/img/product/nike1.jfif'
     ),
     new Product(
       '5',
       'Nike Air Fource 5',
       2000000,
-      '/assets/image/product/nike1.jfif'
+      '/assets/img/product/nike1.jfif'
     ),
   ];
 

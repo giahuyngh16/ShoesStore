@@ -48533,7 +48533,7 @@ if (
             },
             transformFile: function(t, e) {
               return (this.options.resizeWidth || this.options.resizeHeight) &&
-                t.type.match(/image.*/)
+                t.type.match(/img.*/)
                 ? this.resizeImage(
                     t,
                     this.options.resizeWidth,
@@ -49275,7 +49275,7 @@ if (
           (o.prototype._enqueueThumbnail = function(t) {
             if (
               this.options.createImageThumbnails &&
-              t.type.match(/image.*/) &&
+              t.type.match(/img.*/) &&
               t.size <= 1024 * this.options.maxThumbnailFilesize * 1024
             )
               return (
