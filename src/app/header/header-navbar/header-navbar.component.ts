@@ -56,7 +56,4 @@ export class HeaderNavbarComponent implements OnInit, OnDestroy {
       this.totalProductInCart = this.productCarts.length
     }
   }
-
-
-
 }

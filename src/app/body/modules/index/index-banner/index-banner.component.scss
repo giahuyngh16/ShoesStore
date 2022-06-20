@@ -6,6 +6,7 @@
 .text-center h1 {
   font-size: 3.7em;
   line-height: 55px;
+  font-weight: 800;
 }
 
 .main__container button {
@@ -20,4 +21,9 @@
     cursor: pointer;
     transform: scale(1.05);
   }
+}
+
+.bold {
+  font-size: 14px;
+  font-weight: 500;
 }

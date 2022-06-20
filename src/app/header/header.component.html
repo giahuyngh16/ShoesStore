@@ -1,8 +1,8 @@
 <div class="header" >
   <div class="header-top">
-    <div class="container px-3 d-flex justify-content-between">
-      <p>Hotline:<span><a class="hotline" href="tel:0933090455"> 0933090455</a></span></p>
-      <div class="d-flex align-items-center">
+    <div class="container px-3 d-flex justify-content-between px-3">
+      <p class="ps-5">Hotline:<span><a class="hotline" href="tel:0933090455"> 0933090455</a></span></p>
+      <div class="d-flex align-items-center px-4">
         <ng-container *ngIf="!userCurrentProfile else notLogin">
         <a [routerLink]="['/login']" >Sign in</a>
         <a [routerLink]="['/register']">Sign up</a>

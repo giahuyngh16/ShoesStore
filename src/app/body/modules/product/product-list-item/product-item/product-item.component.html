@@ -1,14 +1,15 @@
-<a routerLink="/details/{{product.id}}" >
-  <div class="product-box my-2">
-    <img [src]="'assets' + product?.pic" alt="">
-    <div class="d-flex justify-content-between pt-3 px-3">
-      <div class="col-sm-6">
-        <h6>{{ product?.name }}</h6>
-        <p>{{ product?.priceUSD | maskCurrency }}</p>
-      </div>
-      <div class="col-sm-6 d-flex justify-content-end">
-        <button>DETAILS</button>
-      </div>
+<a routerLink="/details/{{ product.id }}">
+  <div class="product-box"
+  (mouseover)="showImg(true)"
+  (mouseleave)="showImg(false)"
+  >
+    <img [src]="'assets' + product?.pic" [alt]="'assets' + product?.pic" />
+    <div class="product-box-conent p-4">
+      <h6>{{ product?.name }}</h6>
+      <p>{{ product?.priceUSD | maskCurrency }}</p>
+    </div>
+    <div *ngIf="showImage" class="product-detail-btn">
+      <button>DETAILS</button>
     </div>
   </div>
 </a>
