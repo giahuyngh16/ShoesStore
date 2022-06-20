@@ -1,15 +1,15 @@
 <div class="mobile-header">
   <div class="mobile-header-btn d-flex justify-content-between align-items-center h-full px-3 py-2">
-    <img src="../../assets/image/icon/menu.png" alt="" (click)="showMobileMenu()">
+    <img src="../../assets/img/icon/menu.png" alt="" (click)="showMobileMenu()">
     <app-logo></app-logo>
     <a [routerLink]="['/cart']" routerLinkActive="nav-selected">
-      <img src="../../assets/image/icon/shopping-bag.png" alt="">
+      <img src="../../assets/img/icon/shopping-bag.png" alt="">
       <span class="main-text-color">0</span>
     </a>
   </div>
   <div class="mobile-header-item">
     <div class="px-3 py-2 pb-4" *ngIf="mMenu">
-      <img class="p-1 mt-2" src="../../assets/image/icon/reject.png" alt="" (click)="showMobileMenu()">
+      <img class="p-1 mt-2" src="../../assets/img/icon/reject.png" alt="" (click)="showMobileMenu()">
       <div class="d-flex flex-column p-1">
         <a [routerLink]="['/home']" routerLinkActive="nav-selected">Home</a>
         <a class="dropdown-toggle" [routerLink]="['/all-products']" routerLinkActive="nav-selected" (click)="onShowItem()">Products</a>

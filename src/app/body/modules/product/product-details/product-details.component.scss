@@ -29,6 +29,9 @@ span {
   &:nth-child(2) {
     padding: 0 5px;
   }
+  &:hover {
+    cursor: pointer;
+  }
 }
 
 
@@ -55,7 +58,8 @@ input[type="number"]{
 
 .size-item {
   border: none;
-  padding: 10px 48px;
+  padding: 10px 0;
+  width: 100%;
   border-radius: 100px;
   text-align: center;
   background-color: #eee;
@@ -86,4 +90,22 @@ input[type="number"]{
 .price-item {
   font-weight: 700;
   font-size: 25px;
+}
+
+.price {
+  color: #ff914d !important;
+}
+
+.box-size .col-lg-3 {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.activeBtnSubmit {
+  background-color: #000;
+  color: #fff;
+}
+
+.path > .ps-5 {
+  padding-left: 15px !important;
 }

@@ -21,6 +21,12 @@
   background-color: #fff;
 }
 
+.header-nav h2 {
+  font-weight: 900;
+  margin: 0;
+  padding-left: 5px;
+}
+
 .header .container {
   height: 100%;
 }
@@ -30,7 +36,11 @@ span {
 }
 
 .header-top .container .hotline {
-  padding: 0 !important;
+  padding: 0;
+}
+
+.ps-5 {
+  padding-left: 1rem !important;
 }
 
 .header-top a {

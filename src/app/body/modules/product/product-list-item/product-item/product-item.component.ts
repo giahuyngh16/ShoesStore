@@ -12,9 +12,18 @@ export class ProductItemComponent implements OnInit {
 
   @Input() product: ProductInforModel;
 
-  constructor(private productService: ProductService) { }
+  showImage: boolean;
+
+  constructor(private productService: ProductService) {
+    this.showImage = false;
+  }
+
+  showImg(hover: boolean) {
+    setTimeout(() => {
+      this.showImage = hover;
+    }, 35);
+  }
 
   ngOnInit(): void {
   }
-
 }
