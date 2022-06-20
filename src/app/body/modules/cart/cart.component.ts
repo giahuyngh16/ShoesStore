@@ -1,7 +1,13 @@
+import { AuthService } from './../../../core/services/auth.service';
+import { Router } from '@angular/router';
+import { NotifierService } from './../../../core/services/notifier.service';
 import { CartService } from './../../services/cart.service';
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { CartModel } from '../interfaces/cart.interface';
 import { startWith, Subject, takeUntil } from 'rxjs';
+import { BsModalService } from 'ngx-bootstrap/modal';
+import { CheckoutCartModalComponent } from '../checkout-cart-modal/checkout-cart-modal.component';
+import { IUser } from 'src/app/user/interfaces/user.interface';
 
 @Component({
   selector: 'app-cart',
@@ -9,11 +15,16 @@ import { startWith, Subject, takeUntil } from 'rxjs';
   styleUrls: ['./cart.component.scss']
 })
 export class CartComponent implements OnInit ,OnDestroy {
+  userCurrentProfile: IUser| null;
 
   productCarts: CartModel[];
   totalMoney: number = 0;
   destroy$ = new Subject<void>();
-  constructor(private _cartService: CartService) { }
+  constructor(private _cartService: CartService ,
+    private _notifierService: NotifierService,
+    private _modalService: BsModalService,
+    private _router: Router,
+    private _authService: AuthService) { }
 
   ngOnInit() {
     this._cartService.totalMoneyCart$.pipe(startWith(0), takeUntil(this.destroy$)).subscribe((value) => {
@@ -58,9 +69,21 @@ export class CartComponent implements OnInit ,OnDestroy {
       this.productCarts.splice(itemIndex, 1, modifiedProduct);
       this.updateCart();
     } else {
-      alert('test');
+      this._notifierService.showToastrWarningMessage('Please check your cart','Item Instock')
     }
     this.getCart();
+  }
+
+  checkoutCart(productCarts: CartModel[]) {
+    this._authService.currentUser.subscribe((user: IUser| null) => {
+      this.userCurrentProfile = user
+    });
+    if(this.userCurrentProfile == null){
+      this._router.navigate(['login']);
+    }
+    else{
+      this._router.navigate(['checkout-cart']);
+    }
   }
 
   private updateCart(){

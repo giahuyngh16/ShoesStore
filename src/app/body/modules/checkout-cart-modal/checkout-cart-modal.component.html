@@ -1,0 +1,54 @@
+<div>
+  <div class="modal-header">
+    <div>
+      <h2 class="modal-title">Reward summary</h2>
+    </div>
+  </div>
+  <div class="modal-body">
+    <div class="table m-datatable m-datatable--default m-datatable--scroll m-datatable--loaded mt-5">
+      <table class="m-datatable__table m-datatable__table--fluid table-striped">
+        <thead class="m-datatable__head">
+          <tr class="m-datatable__row">
+            <th
+              class="m-datatable__cell">
+              Employee Code
+            </th>
+            <th >
+              Report Name
+            </th>
+            <th
+             >
+              Reward
+            </th>
+            <th >
+              FM Reward Percent (%)
+            </th>
+            <th >
+              FM Reward
+            </th>
+          </tr>
+        </thead>
+        <ng-container>
+          <tbody class="m-datatable__body">
+            <tr >
+              <td class="m-datatable__cell"></td>
+              <td class="m-datatable__cell"></td>
+              <td class="m-datatable__cell m-datatable__cell--right"></td>
+              <td class="m-datatable__cell m-datatable__cell--right"></td>
+              <td class="m-datatable__cell m-datatable__cell--right"></td>
+            </tr>
+          </tbody>
+        </ng-container>
+        <ng-template #noDataBody>
+          <tbody class="m-datatable__body">
+            <tr class="m-datatable__row">
+              <td colspan="5" class="m-datatable__cell m-datatable__cell--center">
+                No data available in table
+              </td>
+            </tr>
+          </tbody>
+        </ng-template>
+      </table>
+    </div>
+  </div>
+</div>

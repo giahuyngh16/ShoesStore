@@ -75,3 +75,46 @@ html::-webkit-scrollbar {
 #toast-container>div {
   width: 450px !important;
 }
+
+.modal-extra-lg {
+  max-width: 900px !important;
+}
+
+.modal {
+  top: -28px;
+}
+
+.modal_head {
+  padding: 25px 0 10px 32px;
+  border-bottom: 1px solid #ebedf2;
+}
+
+.modal_head p {
+  font-size: 20px;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 21px;
+  letter-spacing: normal;
+  text-align: left;
+  color: #575962;
+}
+
+.button_dialog button {
+  margin-right: 10px;
+}
+
+.modal-dialog {
+  max-width: 600px;
+  max-height: 666px;
+  margin-top: 50px;
+}
+
+.modal .modal-content .modal-footer {
+  float: left;
+  border-radius: 0 !important;
+}
+
+.modad_body {
+  padding: 32px;
+}

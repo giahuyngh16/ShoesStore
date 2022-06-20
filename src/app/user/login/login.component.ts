@@ -45,13 +45,12 @@ export class LoginComponent implements OnInit {
     if (this.loginForm.invalid) {
       return;
     }
-
     this.loading = true;
     this._authService.login(this.f['email'].value, this.f['password'].value)
       .pipe(first())
       .subscribe(
         data => {
-          this._notifierService.showToastrSuccessMessage('Register Successfully');
+          this._notifierService.showToastrSuccessMessage('Login Successfully');
           setTimeout( () => {this._router.navigate(['home'])}, 1000);
         },
         error => {

@@ -50,6 +50,9 @@ import { MaskSizePipe } from './core/pipes/mask-size.pipe';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { RegisterComponent } from './user/register/register.component';
 import { NotifierService } from './core/services/notifier.service';
+import { ModalModule } from 'ngx-bootstrap/modal';
+import { CheckoutCartModalComponent } from './body/modules/checkout-cart-modal/checkout-cart-modal.component'
+import { CheckoutCartInforComponent } from './body/modules/checkout-cart-infor/checkout-cart-infor.component';
 
 @NgModule({
   declarations: [
@@ -85,9 +88,10 @@ import { NotifierService } from './core/services/notifier.service';
     LoginComponent,
     WrapperComponent,
     PaginationComponent,
-    MaskCurrencyPipe,
     MaskSizePipe,
     RegisterComponent,
+    CheckoutCartModalComponent,
+    CheckoutCartInforComponent
   ],
   imports: [
     BrowserModule,
@@ -113,7 +117,8 @@ import { NotifierService } from './core/services/notifier.service';
     NgxMaskModule.forRoot({
       thousandSeparator: ',',
       specialCharacters: [',']
-    })
+    }),
+    ModalModule.forRoot()
   ],
   providers: [
     RedirectGuardService,
@@ -125,6 +130,9 @@ import { NotifierService } from './core/services/notifier.service';
     MaskPipe,
     NotifierService,
     ToastrService
+    ],
+    entryComponents: [
+      CheckoutCartModalComponent
     ],
   bootstrap: [AppComponent],
 })

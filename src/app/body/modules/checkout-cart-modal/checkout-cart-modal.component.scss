@@ -1,0 +1,104 @@
+.btn {
+  min-width: 150px;
+  height: 40px;
+}
+
+.close {
+  height: 30px;
+  width: 30px;
+  cursor: pointer;
+
+  &-icon {
+    font-size: 2.8rem;
+    display: block;
+  }
+}
+
+.t-datepicker {
+  width: 300px;
+}
+
+.padding-right {
+  padding-right: 4%;
+}
+
+.t-form .form-group > input {
+  height: 39px;
+}
+
+.t-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: 70px;
+}
+
+.form-group {
+  width: 100%;
+}
+
+.form-group:last-child {
+  padding-right: 0px;
+}
+
+.date-group {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: 50px;
+}
+
+.certification-file {
+  grid-row: span 5;
+}
+
+.description {
+  height: 155px;
+}
+
+.border-right {
+  margin-right: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.t-datepicker__input > button {
+  background-color: transparent;
+  background-repeat: no-repeat;
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+  outline: none;
+}
+
+.modal-header .close {
+  padding: 0;
+  margin: 0 20px 0 0;
+}
+
+.input-group-text {
+  position: absolute;
+  height: 34px;
+  width: 38px;
+  top: 0;
+  right: 0;
+}
+
+.t-date-picker__input {
+  width: 30%;
+  position: relative;
+}
+
+.t-datepicker__input .form-control {
+  width: 100%;
+  z-index: 0;
+  height: 34px;
+}
+
+.modal-date {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+}
+
+input.invalid,
+textarea.invalid {
+  border-color: red;
+}
