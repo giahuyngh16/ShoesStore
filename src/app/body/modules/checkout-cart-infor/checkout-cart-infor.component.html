@@ -30,12 +30,12 @@
               </div>
               <form [formGroup]="informationForm">
                 <div class="box-person-info-item box-order p-3 mt-4">
-                  <h5 class="bold color">Delivery Address</h5>
-                  <div *ngIf="f['address'].errors && f['address'].touched" class="">
-                    <div *ngIf="f['address'].errors.required">Address Delicery is required</div>
-                  </div>
+                  <h5 class="bold color">Delivery Address <span>*</span></h5>
                   <input formControlName="address" type="text"
                     [ngClass]="{ 'is-invalid': submitted && f['address'].errors }">
+                    <div *ngIf="f['address'].errors && f['address'].touched" class="">
+                      <div class="required" *ngIf="f['address'].errors.required">Delivery Address  is required</div>
+                    </div>
                 </div>
               </form>
             </div>
@@ -70,6 +70,7 @@
         <div class="check-out-info mt-4 pt-5">
           <div class="p-3 box-order">
             <h5 class="bold">YOUR ORDER</h5>
+            <hr>
             <div *ngFor="let product of productCarts">
               <div class="d-flex justify-content-between">
                 <h5 class="bold">{{product.name}}<span class="ps-3 bold ml-4"> X </span>
