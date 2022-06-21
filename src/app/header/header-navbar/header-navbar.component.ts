@@ -24,7 +24,7 @@ export class HeaderNavbarComponent implements OnInit, OnDestroy {
   constructor(private _cartService: CartService, private _router: Router, private _cateService: CategoriesService) { }
 
   ngOnInit(){
-    this._cartService.reloadCart$.pipe(startWith(0), takeUntil(this.destroy$)).subscribe((value) => {
+    this._cartService.reloadCart$.pipe(startWith(0), takeUntil(this.destroy$)).subscribe(() => {
       this.getCart();
     });
 
@@ -54,6 +54,9 @@ export class HeaderNavbarComponent implements OnInit, OnDestroy {
     {
       this.productCarts = JSON.parse(product);
       this.totalProductInCart = this.productCarts.length
+    }
+    else {
+      this.totalProductInCart = 0;
     }
   }
 }

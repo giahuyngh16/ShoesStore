@@ -11,7 +11,6 @@ import { Component, OnInit } from '@angular/core';
 })
 export class IndexSpecialProductComponent implements OnInit {
   popularProductList: IProductDetail[];
-
   constructor(
     private _productService: ProductService,
     private _loadingService: LoadingService,

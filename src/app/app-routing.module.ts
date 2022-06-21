@@ -1,3 +1,5 @@
+import { CheckoutSuccessComponent } from './body/modules/checkout-success/checkout-success.component';
+import { HistoryOrderComponent } from './body/modules/history-order/history-order.component';
 import { ForgotPasswordComponent } from './user/forgot-password/forgot-password.component';
 
 import { LoginComponent } from './user/login/login.component';
@@ -23,6 +25,8 @@ const routes: Routes = [
     { path: 'about-us', component: AboutUsComponent },
     { path: 'cart', component: CartComponent },
     { path: 'checkout-cart', component: CheckoutCartInforComponent },
+    { path: 'history-order', component: HistoryOrderComponent },
+    { path: 'checkout-success', component: CheckoutSuccessComponent },
     { path: '', redirectTo: 'home', pathMatch: 'full' },
   ]},
   { path: 'login', component: LoginComponent },

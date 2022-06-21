@@ -39,3 +39,13 @@ export const MESSAGE = {
       INVALID_RECRUITMENTFEE: 'Please make sure these three fields has been filled'
   },
 }
+
+export const DISPLAY_DATE = {
+  SORT_DATE: 'DD/MM/YYYY',
+  LONG_DATE: 'dd MMM yyyy',
+  LONG_DATE_UPPER_CASE: 'DD MMM YYYY',
+  FULL_DATE: 'DD MMM YYYY HH:mm',
+  FULL_DATE_SLASH: 'DD/MMM/YYYY HH:MM',
+  FULL_DATE_UNDERCORE_FORMAT: 'DD/MMM/YYYY:HH:mm',
+  SUBMIT_DATE: 'YYYY-MM-DD',
+};

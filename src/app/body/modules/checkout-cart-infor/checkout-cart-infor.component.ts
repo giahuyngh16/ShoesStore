@@ -70,9 +70,9 @@ export class CheckoutCartInforComponent implements OnInit {
     this._cartService.checkOutCart(this.body).subscribe (
       () => {
         this._notifierService.showToastrSuccessMessage('Order Successfully');
-        sessionStorage.removeItem('cart');
-        this._cartService.reloadCart$.next();
-        setTimeout( () => {this._router.navigate(['home'])}, 1000);
+        window.sessionStorage.removeItem('cart');
+        this._cartService.reloadProductInCart();
+        this._router.navigate(['checkout-success'])
       },
       error => {
         this._notifierService.showToastrErrorMessage('Please try again','Order Fail');
