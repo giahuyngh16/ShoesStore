@@ -24,5 +24,4 @@ export class CartService extends BaseService {
     return this.requestWithLoading().post(`${CHECKOUT_API_PATH.CHECK_OUT_API}`, body);
   }
 
-
 }

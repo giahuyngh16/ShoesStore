@@ -1,7 +1,6 @@
 <div class="product-filter d-flex">
   <span>Soft by:</span>
-  <select (change)="onSelectSort()" class="form-select">
-    <option selected>Price Increase</option>
-    <option value="1">Price Decrease</option>
+  <select (change)="onSelectSort($event.target.value)" class="form-select">
+    <option *ngFor="let item of options">{{item.name}}</option>
   </select>
 </div>

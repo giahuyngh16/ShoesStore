@@ -50,7 +50,7 @@ export class RegisterComponent implements OnInit {
         this._router.navigate(['login']);
       },
       error => {
-        this._notifierService.showMultiError(error.error.Message);
+        this.error = error.error.Message;
         this.loading = false;
       },
     )
@@ -58,11 +58,13 @@ export class RegisterComponent implements OnInit {
 
   private _buildForm(): FormGroup {
     return this._formBuilder.group({
-      email: ['', Validators.required],
+      email: ['', [Validators.required, Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$")]],
       password: ['', Validators.required],
       fullName: ['', Validators.required],
       phoneNumber: ['', Validators.required],
-      confirmPassword: ['', Validators.required],
-    } , CustomValidators.mustMatch('password', 'confirmPassword'));
+      confirmPassword: ['', [Validators.required]],
+    } ,{
+      validator: CustomValidators.ConfirmedValidator('password', 'confirmPassword')
+    })
   }
 }

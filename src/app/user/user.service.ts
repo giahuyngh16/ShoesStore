@@ -19,4 +19,12 @@ export class UserService extends BaseService {
     return this.requestWithLoading().post(`${USER_API_PATH.REGISTER_ACCOUNT}`, value);
   }
 
+  resetPassword(data: any): Observable<any>{
+    const value = data && {
+      email: data.email,
+      phoneNumber: data.phoneNumber,
+    }
+    return this.requestWithLoading().post(`${USER_API_PATH.RESET_PASSWORD}`, value);
+  }
+
 }

@@ -10,7 +10,7 @@ import { IProductFilter, ProductInforModel } from '../../interfaces/product-type
 })
 export class ProductListItemComponent implements OnInit {
   //products: Product[];
-
+  p: number;
   @Input() productsInfor: ProductInforModel[];
 
   constructor(

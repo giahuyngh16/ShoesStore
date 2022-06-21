@@ -1,3 +1,4 @@
+import { ForgotPasswordComponent } from './user/forgot-password/forgot-password.component';
 
 import { LoginComponent } from './user/login/login.component';
 import { NgModule } from '@angular/core';
@@ -26,6 +27,7 @@ const routes: Routes = [
   ]},
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent},
+  { path: 'forgot-password', component: ForgotPasswordComponent},
   { path: '**', component: ErrorComponent },
 ];
 

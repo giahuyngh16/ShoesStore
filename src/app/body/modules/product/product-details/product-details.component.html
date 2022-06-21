@@ -1,9 +1,9 @@
 <div class="container">
   <div class="py-3">
     <div class="path d-flex">
-      <a class="ps-5" href="/all-products/{{brandInfor.id}}">Products</a>
+      <a class="ps-5" routerLink="/all-products/{{brandInfor?.id}}">Products</a>
       <span>/</span>
-      <a href="/all-products/{{brandInfor.id}}">{{brandInfor?.name}}</a>
+      <a routerLink="/all-products/{{brandInfor?.id}}">{{brandInfor?.name}}</a>
       <span>/</span>
       <a class="active" [routerLink]="['/all-products']">Details</a>
     </div>

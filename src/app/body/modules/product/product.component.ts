@@ -65,13 +65,6 @@ export class ProductComponent implements OnInit {
     typeId: null,
   };
 
-  public onPagingChanged(newPagingModel: PagingModel) {
-    this.pagingModel = newPagingModel;
-    this.filter.skip = newPagingModel.skip;
-    this.filter.take = newPagingModel.itemsPerPage;
-    this._loadListProductOfBrand();
-  }
-
   private _loadListProductOfBrand() {
     this._productService.getProducts(this.filter).subscribe(response => {
       this.productsInfor = response.data.productsInfor;
@@ -90,6 +83,20 @@ export class ProductComponent implements OnInit {
 
   getValue(productTypeId:number){
     this.filter.typeId = productTypeId;
+    this._loadListProductOfBrand();
+  }
+
+  getValueSort(sortProduct: any) {
+    if(sortProduct == 'Price Decrease')
+    {
+      this.filter.sortBy = 'price';
+      this.filter.isDescending = true;
+    }
+    else if (sortProduct == 'Price Increase')
+    {
+      this.filter.sortBy = 'price';
+      this.filter.isDescending = false;
+    }
     this._loadListProductOfBrand();
   }
 }

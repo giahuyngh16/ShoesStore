@@ -53,6 +53,9 @@ import { NotifierService } from './core/services/notifier.service';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { CheckoutCartModalComponent } from './body/modules/checkout-cart-modal/checkout-cart-modal.component'
 import { CheckoutCartInforComponent } from './body/modules/checkout-cart-infor/checkout-cart-infor.component';
+import { ForgotPasswordComponent } from './user/forgot-password/forgot-password.component';
+import { BaseService } from './core/services/base.service';
+import { httpInterceptorProviders } from './core/interceptors';
 
 @NgModule({
   declarations: [
@@ -91,7 +94,8 @@ import { CheckoutCartInforComponent } from './body/modules/checkout-cart-infor/c
     MaskSizePipe,
     RegisterComponent,
     CheckoutCartModalComponent,
-    CheckoutCartInforComponent
+    CheckoutCartInforComponent,
+    ForgotPasswordComponent
   ],
   imports: [
     BrowserModule,
@@ -118,7 +122,7 @@ import { CheckoutCartInforComponent } from './body/modules/checkout-cart-infor/c
       thousandSeparator: ',',
       specialCharacters: [',']
     }),
-    ModalModule.forRoot()
+    ModalModule.forRoot(),
   ],
   providers: [
     RedirectGuardService,
@@ -129,7 +133,9 @@ import { CheckoutCartInforComponent } from './body/modules/checkout-cart-infor/c
     MaskSizePipe,
     MaskPipe,
     NotifierService,
-    ToastrService
+    ToastrService,
+    BaseService,
+    ...httpInterceptorProviders,
     ],
     entryComponents: [
       CheckoutCartModalComponent

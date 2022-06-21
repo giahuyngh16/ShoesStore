@@ -8,12 +8,16 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 export class ProductFliterComponent implements OnInit {
   @Output() sortProduct = new EventEmitter();
 
+  options = [
+    { name: "Price Increase", value: 1 },
+    { name: "Price Decrease", value: 2 }
+  ]
   constructor() { }
 
   ngOnInit() {
   }
 
-  onSelectSort() {
-   this.sortProduct.emit();
+  onSelectSort(value :any) {
+   this.sortProduct.emit(value);
   }
 }
