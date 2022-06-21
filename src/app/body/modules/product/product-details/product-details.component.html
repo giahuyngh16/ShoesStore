@@ -1,15 +1,15 @@
 <div class="container">
   <div class="py-3">
     <div class="path d-flex">
-      <a class="ps-5" routerLink="/all-products/{{brandInfor?.id}}">Products</a>
+      <a class="ps-5" href="/all-products/{{brandInfor.id}}">Products</a>
       <span>/</span>
-      <a routerLink="/all-products/{{brandInfor?.id}}">{{brandInfor?.name}}</a>
+      <a href="/all-products/{{brandInfor.id}}">{{brandInfor?.name}}</a>
       <span>/</span>
       <a class="active" [routerLink]="['/all-products']">Details</a>
     </div>
     <div class="product-detail mt-4">
-      <div class="d-flex justify-content-between">
-        <div class="col-lg-6 px-5">
+      <div class="d-flex flex-wrap justify-content-between">
+        <div class="col-lg-6 col-12 px-5">
           <img id="defaultIMG" [src]="'assets'+ productDetail?.pic1" alt="" />
           <div class="items d-flex pt-3">
             <img (click)="imgSelected(productDetail?.pic1)" [src]="'assets'+ productDetail?.pic1" alt="" />
@@ -17,17 +17,19 @@
             <img (click)="imgSelected(productDetail?.pic3)" [src]="'assets'+ productDetail?.pic3" alt="" />
           </div>
         </div>
-        <div class="detail-content col-lg-6 ps-5">
-          <div class="">
-            <h1>{{productDetail?.name}}</h1>
-            <div class="price-item price">{{productDetail?.priceUSD | maskCurrency}}</div>
-            <p>
-              {{productDetail?.description}}
-            </p>
-            <h3>Size:</h3>
+        <div class="detail-content col-lg-6 col-12 ps-5">
+          <div class="pt-10">
+            <div class="p-sd">
+              <h1>{{productDetail?.name}}</h1>
+              <div class="price-item price">{{productDetail?.priceUSD | maskCurrency}}</div>
+              <p>
+                {{productDetail?.description}}
+              </p>
+              <h3>Size:</h3>
+            </div>
             <div class="box-size d-flex flex-wrap justify-content-start size-container mt-4">
-              <div *ngFor="let size of sizeProductInfors" class="col-lg-3 mb-2">
-                <div class="box-size-item" >
+              <div *ngFor="let size of sizeProductInfors" class="col-xl-3 col-lg-5 col-md-3 col-5 mb-2">
+                <div class="box-size-item">
                   <button class="size-item" [class.selected-size]="selectedSize?.id === size?.id" [disabled]="!size?.isAvailable" (click)="onSizeChange(size); activeBtnSubmit()">{{size?.productSize | maskSize}}</button>
                 </div>
               </div>
@@ -43,7 +45,10 @@
       </div>
     </div>
   </div>
-  <div class="my-5">
-    <app-index-special-product></app-index-special-product>
+</div>
+<div class="my-5">
+  <div class="container">
+    <h2 class="px-4 mt-5">Maybe you will like</h2>
   </div>
+  <app-index-special-product></app-index-special-product>
 </div>

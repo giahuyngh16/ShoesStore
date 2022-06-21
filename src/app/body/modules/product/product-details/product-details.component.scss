@@ -109,3 +109,17 @@ input[type="number"]{
 .path > .ps-5 {
   padding-left: 15px !important;
 }
+
+.box-size-item button {
+  max-width: 130px;
+}
+
+
+@media (max-width: 992px) {
+  .pt-10 {
+    padding-top: 40px !important;
+  }
+  .p-sd {
+    padding: 0 1.5rem;
+  }
+}

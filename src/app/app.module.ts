@@ -56,6 +56,7 @@ import { CheckoutCartInforComponent } from './body/modules/checkout-cart-infor/c
 import { ForgotPasswordComponent } from './user/forgot-password/forgot-password.component';
 import { BaseService } from './core/services/base.service';
 import { httpInterceptorProviders } from './core/interceptors';
+import { CheckOutSuccessComponent } from './body/modules/check-out-success/check-out-success.component';
 
 @NgModule({
   declarations: [
@@ -95,7 +96,8 @@ import { httpInterceptorProviders } from './core/interceptors';
     RegisterComponent,
     CheckoutCartModalComponent,
     CheckoutCartInforComponent,
-    ForgotPasswordComponent
+    ForgotPasswordComponent,
+    CheckOutSuccessComponent
   ],
   imports: [
     BrowserModule,
