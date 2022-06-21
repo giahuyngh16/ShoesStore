@@ -17,7 +17,7 @@ export class CheckoutCartModalComponent implements OnInit {
     private _bsModalRef: BsModalRef,
   ) { }
   ngOnInit() {
-    console.log(this.productCarts);
+    //onsole.log(this.productCarts);
   }
 
 }

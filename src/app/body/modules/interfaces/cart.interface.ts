@@ -9,11 +9,12 @@ export interface CartModel {
   maxQuantity: number;
 }
 
+export interface ProductCheckOutModel {
+  id: number;
+  quantity: number;
+}
 export interface OrderParamModel {
-  productCheckoutModel: [{
-    id: number;
-    quantity: number;
-  }],
+  productCheckOutModels: ProductCheckOutModel[];
   paymentMethod: number;
   address: string;
 }

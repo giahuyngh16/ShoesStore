@@ -20,18 +20,24 @@
                 <div class="col-lg-6 ps-4">
                   <div class="box-person-info-item box-order p-3">
                     <h5 class="bold">Phone</h5>
-                    <input [disabled]="true" [(ngModel)]="userCurrentProfile.phone" type="text">
+                    <input [disabled]="true" [(ngModel)]="userCurrentProfile.phone" type="text" name="phone">
                   </div>
                 </div>
               </div>
               <div class="box-person-info-item box-order p-3 mt-4">
                 <h5 class="bold">Email</h5>
-                <input [disabled]="true" [(ngModel)]="userCurrentProfile.email" type="text">
+                <input [disabled]="true" [(ngModel)]="userCurrentProfile.email" name="email" type="text">
               </div>
-              <div class="box-person-info-item box-order p-3 mt-4">
-                <h5 class="bold color">Delivery Address</h5>
-                <input type="text" [(ngModel)]="userCurrentProfile.address">
-              </div>
+              <form [formGroup]="informationForm">
+                <div class="box-person-info-item box-order p-3 mt-4">
+                  <h5 class="bold color">Delivery Address</h5>
+                  <div *ngIf="f['address'].errors && f['address'].touched" class="">
+                    <div *ngIf="f['address'].errors.required">Address Delicery is required</div>
+                  </div>
+                  <input formControlName="address" type="text"
+                    [ngClass]="{ 'is-invalid': submitted && f['address'].errors }">
+                </div>
+              </form>
             </div>
           </div>
         </div>
@@ -66,7 +72,8 @@
             <h5 class="bold">YOUR ORDER</h5>
             <div *ngFor="let product of productCarts">
               <div class="d-flex justify-content-between">
-                <h5 class="bold">{{product.name}}<span class="ps-3 bold ml-4"> X </span> <span>{{product.quantity}}</span></h5>
+                <h5 class="bold">{{product.name}}<span class="ps-3 bold ml-4"> X </span>
+                  <span>{{product.quantity}}</span></h5>
 
                 <h5 class="bold">{{(product.priceUSD) * (product.quantity)| maskCurrency}}</h5>
               </div>
@@ -87,7 +94,9 @@
               <h2 class="bold">{{totalMoney | maskCurrency}}</h2>
             </div>
           </div>
-          <button>ORDER</button>
+          <button [disabled]="loading" (click)="onOrder()">
+            <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+            ORDER</button>
         </div>
       </div>
     </div>

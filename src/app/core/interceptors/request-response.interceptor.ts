@@ -7,7 +7,8 @@ import { throwError } from 'rxjs/internal/observable/throwError';
 
 import { LoadingService } from '../services/loading.service';
 import { AuthService } from '../services/auth.service';
-import { IRequestError } from '../components/interfaces/request-error.interface';
+import { getMessageFromApiRequest } from '../helpers/error-message.utils';
+import { IRequestError } from '../interfaces/request-error.interface';
 
 @Injectable()
 export class RequestResponseInterceptor implements HttpInterceptor {

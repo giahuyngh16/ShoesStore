@@ -15,7 +15,7 @@ export class HeaderNavbarComponent implements OnInit, OnDestroy {
 
   productCarts: CartModel[];
   totalProductInCart: number;
-  reloadCartSubscription: Subscription;
+  reloadCartSubscription$: Subscription;
   destroy$ = new Subject<void>();
 
   brandList: any[];
@@ -24,7 +24,7 @@ export class HeaderNavbarComponent implements OnInit, OnDestroy {
   constructor(private _cartService: CartService, private _router: Router, private _cateService: CategoriesService) { }
 
   ngOnInit(){
-    this._cartService.reloadCart$.pipe(startWith(0), takeUntil(this.destroy$)).subscribe((value) => {
+    this.reloadCartSubscription$= this._cartService.reloadCart$.subscribe((value) => {
       this.getCart();
     });
 
@@ -40,8 +40,7 @@ export class HeaderNavbarComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy() {
-    this.destroy$.next();
-    this.destroy$.complete();
+    this.reloadCartSubscription$.unsubscribe();
   }
 
   onNavigateToProduct(){

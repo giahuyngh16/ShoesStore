@@ -10,7 +10,9 @@
       </div>
       <div class="col-lg-10 d-flex flex-column">
         <div class="p-2">
-          <app-product-fliter></app-product-fliter>
+          <app-product-fliter
+          (sortProduct)="getValueSort($event)">
+        </app-product-fliter>
         </div>
         <div class="list-product">
           <app-product-list-item
@@ -19,9 +21,6 @@
         </div>
       </div>
     </div>
-  </div>
-  <div>
-    <app-pagination [model]="pagingModel" [(data)]="productPagingViewModel" (dataModelChangeEvent)="onPagingChanged($event)"></app-pagination>
   </div>
 </div>
 
