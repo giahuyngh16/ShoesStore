@@ -49,3 +49,13 @@ export const DISPLAY_DATE = {
   FULL_DATE_UNDERCORE_FORMAT: 'DD/MMM/YYYY:HH:mm',
   SUBMIT_DATE: 'YYYY-MM-DD',
 };
+
+export enum PayPalEnvironment {
+  Sandbox = "sandbox",
+  Production = "production",
+}
+
+export enum PayPalIntegrationType {
+  ClientSideREST = 0,
+  ServerSideREST = 1,
+}

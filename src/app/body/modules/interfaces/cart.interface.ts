@@ -17,4 +17,5 @@ export interface OrderParamModel {
   productCheckOutModels: ProductCheckOutModel[];
   paymentMethod: number;
   address: string;
+  isPaid: boolean;
 }
