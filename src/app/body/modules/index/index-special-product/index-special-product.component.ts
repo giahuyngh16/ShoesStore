@@ -1,3 +1,4 @@
+import { environment } from 'src/environments/environment';
 import { Router } from '@angular/router';
 import { LoadingService } from './../../../../core/services/loading.service';
 import { ProductService } from './../../../services/product.service';
@@ -11,7 +12,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class IndexSpecialProductComponent implements OnInit {
   popularProductList: IProductDetail[];
-
+  environment = environment;
   showImage: boolean;
 
   constructor(

@@ -8,6 +8,7 @@ import { ProductService } from 'src/app/body/services/product.service';
 import { BaseProductInfor, IProductDetailViewModel } from '../../interfaces/product-detail.interface';
 import { BrandInforModel } from '../../interfaces/product-type.interface';
 import { CartModel } from '../../interfaces/cart.interface';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-product-details',
@@ -15,7 +16,7 @@ import { CartModel } from '../../interfaces/cart.interface';
   styleUrls: ['./product-details.component.scss']
 })
 export class ProductDetailsComponent implements OnInit {
-
+  environment = environment;
   productDetail: IProductDetailViewModel;
   brandInfor: BrandInforModel;
   sizeProductInfors: BaseProductInfor[];
@@ -41,7 +42,7 @@ export class ProductDetailsComponent implements OnInit {
 
   imgSelected(src) {
     let imgSelected = document.getElementById('defaultIMG') as HTMLImageElement;
-    imgSelected.src = 'assets'+src;
+    imgSelected.src = environment.apiHost + src;
   }
 
   onQuantityChange(event: Event): void {

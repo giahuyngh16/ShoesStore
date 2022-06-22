@@ -1,3 +1,4 @@
+import { environment } from 'src/environments/environment';
 import { AuthService } from './../../../core/services/auth.service';
 import { Router } from '@angular/router';
 import { NotifierService } from './../../../core/services/notifier.service';
@@ -16,7 +17,7 @@ import { IUser } from 'src/app/user/interfaces/user.interface';
 })
 export class CartComponent implements OnInit ,OnDestroy {
   userCurrentProfile: IUser| null;
-
+  environment = environment;
   productCarts: CartModel[];
   totalMoney: number = 0;
   destroy$ = new Subject<void>();
@@ -47,6 +48,14 @@ export class CartComponent implements OnInit ,OnDestroy {
       this.totalMoney += (item.priceUSD * item.quantity);
     });
   }
+
+  onDeleteProduct(item: CartModel) {
+    const itemIndex = this.productCarts.findIndex(product => product.id === item.id);
+    this.productCarts.splice(itemIndex, 1);
+    this.updateCart();
+    this.getCart();
+  }
+
 
   onRemoveProduct(item: CartModel) {
     const itemIndex = this.productCarts.findIndex(product => product.id === item.id);

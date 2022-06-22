@@ -1,9 +1,9 @@
-<a routerLink="/details/{{ product.id }}">
+<a [routerLink]="'/details/' + product?.id">
   <div class="product-box"
   (mouseover)="showImg(true)"
   (mouseleave)="showImg(false)"
   >
-    <img [src]="'assets' + product?.pic" [alt]="'assets' + product?.pic" />
+    <img [src]="environment.apiHost + product?.pic" [alt]="environment.apiHost + product?.pic" />
     <div class="product-box-conent p-4">
       <h6>{{ product?.name }}</h6>
       <p>{{ product?.priceUSD | maskCurrency }}</p>
