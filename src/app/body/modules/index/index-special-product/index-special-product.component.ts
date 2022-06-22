@@ -11,11 +11,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class IndexSpecialProductComponent implements OnInit {
   popularProductList: IProductDetail[];
+
+  showImage: boolean;
+
   constructor(
     private _productService: ProductService,
     private _loadingService: LoadingService,
     private _router: Router,
-  ) { }
+  ) {
+    this.showImage = false;
+   }
 
   ngOnInit() {
     this._loadListProductPopular();

@@ -1,6 +1,6 @@
 <div class="header" >
   <div class="header-top">
-    <div class="container px-3 d-flex justify-content-between px-3">
+    <div class="container px-3 d-flex justify-content-between px-4">
       <p class="ps-5">Hotline:<span><a class="hotline" href="tel:0933090455"> 0933090455</a></span></p>
       <div class="d-flex align-items-center px-4">
         <ng-container *ngIf="!userCurrentProfile else notLogin">
@@ -9,7 +9,7 @@
         </ng-container>
       </div>
       <ng-template #notLogin class="d-flex align-items-center">
-        <a>{{userCurrentProfile.name}}</a>
+        <a class="bold">{{userCurrentProfile.name}}</a>
         <a (click)="onLogout()">Logout</a>
       </ng-template>
     </div>
@@ -19,6 +19,7 @@
       <div class="d-flex align-items-center">
         <div class="col-md-4 d-flex align-items-center">
           <app-logo></app-logo>
+          <h2>Dream Store</h2>
         </div>
         <div class="col-md-8">
           <app-header-navbar></app-header-navbar>

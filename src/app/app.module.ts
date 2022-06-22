@@ -57,10 +57,10 @@ import { CheckoutCartInforComponent } from './body/modules/checkout-cart-infor/c
 import { ForgotPasswordComponent } from './user/forgot-password/forgot-password.component';
 import { BaseService } from './core/services/base.service';
 import { httpInterceptorProviders } from './core/interceptors';
-import { HistoryOrderComponent } from './body/modules/history-order/history-order.component';
 import { FormatTimePipe } from './core/pipes/format-time.pipe';
 import { CheckoutSuccessComponent } from './body/modules/checkout-success/checkout-success.component';
 import { NgxPayPalModule } from 'ngx-paypal';
+import { HistoryOrderComponent } from './body/modules/history-order/history-order.component';
 
 @NgModule({
   declarations: [

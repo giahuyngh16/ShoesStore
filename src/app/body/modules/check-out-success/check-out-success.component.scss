@@ -1,0 +1,16 @@
+img {
+  width: 20% !important;
+}
+
+button {
+  border-radius: 5px;
+  background-color: #111;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  transition: transform .3s;
+}
+
+button:hover {
+  transform: scale(1.1);
+}

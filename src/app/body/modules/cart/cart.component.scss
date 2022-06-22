@@ -59,6 +59,19 @@ h6 {
   background-color: #aaa !important;
 }
 
+.btn-remove img {
+  width: 40px;
+  height: 40px;
+  padding: 5px;
+  border-radius: 50%;
+  border: 2px solid #111;
+  transition: transform .2s;
+  &:hover {
+    cursor: pointer;
+    transform: scale(1.15);
+  }
+}
+
 .box-remove img {
   width: 100%;
   padding: 5px;
@@ -70,11 +83,16 @@ h6 {
   transform: scale(1.1);
 }
 
+.price {
+  color: #ff914d !important;
+  font-weight: 400;
+}
+
 .total-price h2 {
-  font-size: 24px;
+  font-size: 28px;
   font-weight: 500;
   padding: 7px 40px;
-  border: 2px solid #aaa;
+  font-weight: 900;
 }
 
 .total-price button {
@@ -90,4 +108,19 @@ h6 {
 .total-price button:hover {
   cursor: pointer;
   transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+  .cart-title {
+    display: none !important;
+  }
+  .pc-disabled {
+    display: none !important;
+  }
+}
+
+@media (min-width: 768px) {
+  .m-disabled {
+    display: none !important;
+  }
 }

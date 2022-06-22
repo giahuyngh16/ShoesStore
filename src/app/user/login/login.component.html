@@ -7,8 +7,9 @@
         </div>
         <div class="col-md-7">
           <div class="card-body">
-            <div [routerLink]="['/home']" class="brand-wrapper">
+            <div [routerLink]="['/home']" class="brand-wrapper d-flex align-items-center">
               <img src="../../assets/img/icon/circle.png" alt="logo" class="logo">
+              <h2>Dream Store</h2>
             </div>
             <h2 class="login-card-description">Login your account</h2>
             <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">

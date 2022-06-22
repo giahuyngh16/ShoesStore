@@ -1,7 +1,7 @@
 <div class="list-product d-flex flex-wrap justify-content-start">
   <app-product-item
     *ngFor="let productItem of productsInfor | paginate: { itemsPerPage: 6, currentPage: p }"
-    [product]="productItem" class="col-4 mt-3"
+    [product]="productItem" class="col-xl-4 col-sm-6 col-12 mt-3"
   ></app-product-item>
 </div>
 <pagination-controls (pageChange)=" p = $event" class="float-right"></pagination-controls>
