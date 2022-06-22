@@ -1,3 +1,4 @@
+import { environment } from 'src/environments/environment';
 import { ProductService } from '../../../../services/product.service';
 import { Product } from '../../../../models/product.model';
 import { Component, OnInit, Input } from '@angular/core';
@@ -12,6 +13,7 @@ export class ProductItemComponent implements OnInit {
 
   @Input() product: ProductInforModel;
 
+  environment = environment;
   showImage: boolean;
 
   constructor(private productService: ProductService) {
