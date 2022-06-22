@@ -71,3 +71,12 @@ h5 {
 .required {
   color: red;
 }
+
+.paypal-container {
+  margin-top: 20px;
+}
+
+.disable-button {
+  pointer-events: none;
+  opacity: 0.4;
+}

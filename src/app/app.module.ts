@@ -60,6 +60,7 @@ import { httpInterceptorProviders } from './core/interceptors';
 import { HistoryOrderComponent } from './body/modules/history-order/history-order.component';
 import { FormatTimePipe } from './core/pipes/format-time.pipe';
 import { CheckoutSuccessComponent } from './body/modules/checkout-success/checkout-success.component';
+import { NgxPayPalModule } from 'ngx-paypal';
 
 @NgModule({
   declarations: [
@@ -107,6 +108,7 @@ import { CheckoutSuccessComponent } from './body/modules/checkout-success/checko
   imports: [
     BrowserModule,
     AppRoutingModule,
+    NgxPayPalModule,
     FormsModule,
     ReactiveFormsModule,
     CommonModule,
