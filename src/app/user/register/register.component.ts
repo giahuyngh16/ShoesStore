@@ -50,7 +50,7 @@ export class RegisterComponent implements OnInit {
         this._router.navigate(['login']);
       },
       error => {
-        this.error = error.error.Message;
+        this.error = error.message;
         this.loading = false;
       },
     )

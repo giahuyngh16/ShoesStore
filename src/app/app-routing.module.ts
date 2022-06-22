@@ -1,3 +1,5 @@
+import { CheckoutSuccessComponent } from './body/modules/checkout-success/checkout-success.component';
+import { HistoryOrderComponent } from './body/modules/history-order/history-order.component';
 import { ForgotPasswordComponent } from './user/forgot-password/forgot-password.component';
 
 import { LoginComponent } from './user/login/login.component';
@@ -13,7 +15,6 @@ import { RouterModule, Routes } from '@angular/router';
 import { WrapperComponent } from './wrapper/wrapper.component';
 import { RegisterComponent } from './user/register/register.component';
 import { CheckoutCartInforComponent } from './body/modules/checkout-cart-infor/checkout-cart-infor.component';
-import { CheckOutSuccessComponent } from './body/modules/check-out-success/check-out-success.component';
 
 const routes: Routes = [
   { path: '', component: WrapperComponent, children: [
@@ -24,7 +25,8 @@ const routes: Routes = [
     { path: 'about-us', component: AboutUsComponent },
     { path: 'cart', component: CartComponent },
     { path: 'checkout-cart', component: CheckoutCartInforComponent },
-    { path: 'check-out-success', component: CheckOutSuccessComponent },
+    { path: 'history-order', component: HistoryOrderComponent },
+    { path: 'checkout-success', component: CheckoutSuccessComponent },
     { path: '', redirectTo: 'home', pathMatch: 'full' },
   ]},
   { path: 'login', component: LoginComponent },

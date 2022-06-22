@@ -1,0 +1,27 @@
+<div class="container p-3 my-2 pb-5">
+  <div class="p-4">
+    <h2>ORDERS</h2>
+    <div *ngFor="let item of historyOrders | paginate: { itemsPerPage: 6, currentPage: p }" class="order-box mt-4 d-flex align-items-center justify-content-between">
+      <div class="col-lg-7 d-flex align-items-center">
+        <img src="../../../../assets/img/icon/money.png" alt="">
+          <p>{{item?.id}}</p>
+        <div class="order-content">
+          <h5>{{item?.orderDay | formatTime: DISPLAY_DATE.FULL_DATE}}</h5>
+          <!-- Name detail -->
+          <span class="payment">{{item.payment}}</span><a *ngIf="item.isPaid" class="paid"> (Paid) </a>
+          <br>
+          <span class="payment">Extra Fee: <a>{{item.extraFeeUSD | maskCurrency}}</a></span>
+        </div>
+      </div>
+      <div class="col-lg-5 pe-3 d-flex align-items-center">
+        <div class="col-lg-6 d-flex align-items-center justify-content-end">
+          <p class="price">{{item?.totalPrice | maskCurrency}}</p>
+        </div>
+        <div class="col-lg-6 d-flex align-items-center justify-content-end status">
+          <span [ngClass]="item?.statusOrder.toLowerCase()">{{item?.statusOrder}}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <pagination-controls (pageChange)=" p = $event" class="float-right"></pagination-controls>
+</div>

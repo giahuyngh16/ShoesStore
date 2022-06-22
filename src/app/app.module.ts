@@ -1,3 +1,4 @@
+import { OrderService } from './body/services/order.service';
 import { ToastContainerModule, ToastrModule, ToastrService } from 'ngx-toastr';
 import { LoginComponent } from './user/login/login.component';
 import { NgModule } from '@angular/core';
@@ -56,12 +57,16 @@ import { CheckoutCartInforComponent } from './body/modules/checkout-cart-infor/c
 import { ForgotPasswordComponent } from './user/forgot-password/forgot-password.component';
 import { BaseService } from './core/services/base.service';
 import { httpInterceptorProviders } from './core/interceptors';
-import { CheckOutSuccessComponent } from './body/modules/check-out-success/check-out-success.component';
+import { FormatTimePipe } from './core/pipes/format-time.pipe';
+import { CheckoutSuccessComponent } from './body/modules/checkout-success/checkout-success.component';
+import { NgxPayPalModule } from 'ngx-paypal';
+import { HistoryOrderComponent } from './body/modules/history-order/history-order.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MaskCurrencyPipe,
+    FormatTimePipe,
     HeaderComponent,
     FooterComponent,
     HeaderNavbarComponent,
@@ -97,11 +102,13 @@ import { CheckOutSuccessComponent } from './body/modules/check-out-success/check
     CheckoutCartModalComponent,
     CheckoutCartInforComponent,
     ForgotPasswordComponent,
-    CheckOutSuccessComponent
+    HistoryOrderComponent,
+    CheckoutSuccessComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    NgxPayPalModule,
     FormsModule,
     ReactiveFormsModule,
     CommonModule,
@@ -136,8 +143,10 @@ import { CheckOutSuccessComponent } from './body/modules/check-out-success/check
     MaskPipe,
     NotifierService,
     ToastrService,
+    FormatTimePipe,
     BaseService,
     ...httpInterceptorProviders,
+    OrderService
     ],
     entryComponents: [
       CheckoutCartModalComponent
